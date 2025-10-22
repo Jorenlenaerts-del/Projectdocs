@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind Fonts Overview</title>
+  <link href="./dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/flexboxes.css">
+  <link rel="stylesheet" href="assets/nav.css">
+  <link rel="stylesheet" href="assets/typography.css">
+</head>
+<body class="font-sans text-gray-800
+">
+  <!-- Header Navigation -->
+  <header class="w-full shadow p-4 flex items-center justify-between">
+    <a class="px-2 py-2 rounded text-xs " href="index.html">BP HTML 07 Tailwind</a>
+
+    <nav>
+      <ul class="flex space-x-4 text-xs">
+         <li><a class="px-2 py-2 rounded color-white hover:bg-white  " href="page1.html">Typography</a></li>
+        <li><a class="px-2 py-2 rounded color-white hover:bg-white  " href="page2.html">Colors</a></li>
+        <li><a class="px-2 py-2 rounded color-white hover:bg-white  " href="page3.html">Grids</a></li> 
+        <li><a class="px-2 py-2 rounded color-white hover:bg-white  " href="page4.html">UI</a></li>
+        <li><a class="px-2 py-2 rounded color-white hover:bg-white  " href="page5.html">Tables</a></li>
+        <li><a class="px-2 py-2 rounded color-white hover:bg-white  " href="page6.html">Components</a></li> 
+        <li><a class="px-2 py-2 rounded color-white hover:bg-white  " href="page7.html">Cheatsheet</a></li> 
+      </ul>
+    </nav>
+  </header>
+  <div class="mx-auto p-4 flex">
+    <!-- Main Content -->
+      
+    <main class="container p-6 rounded space-y-6">
+  <h1 class="text-3xl font-bold mb-6">Tailwind CSS Fonts Overview</h1>
+
+  <!-- Font Families -->
+  <section class="grid grid-cols-2 gap-6">
+    <div>
+       <h3 class="font-bold">Font Families</h3>
+      <p>Tailwind provides utility classes for different font families:</p>
+      <pre class="bg-gray-800 text-white p-2 rounded font-mono mt-2">Example: &lt;p class="font-sans"&gt;Hello&lt;/p&gt;</pre>
+    </div>
+    <div class="space-y-1 p-4 bg-white/25 rounded">
+      <p class="font-sans">.font-sans → Sans-serif font</p>
+      <p class="font-serif">.font-serif → Serif font</p>
+      <p class="font-mono">.font-mono → Monospace font</p>
+    </div>
+  </section>
+
+  <!-- Font Sizes -->
+  <section class="grid grid-cols-2 gap-6">
+    <div>
+       <h3 class="font-bold">Font Sizes</h3>
+      <p>Use <code>text-{size}</code> classes to control font size.</p>
+      <pre class="bg-gray-800 text-white p-2 rounded font-mono mt-2">Example: &lt;p class="text-xl"&gt;Hello&lt;/p&gt;</pre>
+    </div>
+    <div class="space-y-1 p-4 bg-white/25 rounded">
+      <p class="text-xs">.text-xs → Extra small</p>
+      <p class="text-sm">.text-sm → Small</p>
+      <p class="text-base">.text-base → Base size</p>
+      <p class="text-lg">.text-lg → Large</p>
+      <p class="text-xl">.text-xl → Extra large</p>
+      <p class="text-2xl">.text-2xl → 2x extra large</p>
+      <p class="text-3xl">.text-3xl → 3x extra large</p>
+    </div>
+  </section>
+
+  <!-- Font Weight -->
+  <section class="grid grid-cols-2 gap-6">
+    <div>
+       <h3 class="font-bold">Font Weight</h3>
+      <p>Control weight with <code>font-{weight}</code> classes.</p>
+      <pre class="bg-gray-800 text-white p-2 rounded font-mono mt-2">Example: &lt;p class="font-bold"&gt;Hello&lt;/p&gt;</pre>
+    </div>
+    <div class="space-y-1 p-4 bg-white/25 rounded">
+      <p class="font-thin">.font-thin → 100</p>
+      <p class="font-extralight">.font-extralight → 200</p>
+      <p class="font-light">.font-light → 300</p>
+      <p class="font-normal">.font-normal → 400</p>
+      <p class="font-medium">.font-medium → 500</p>
+      <p class="font-semibold">.font-semibold → 600</p>
+      <p class="font-bold">.font-bold → 700</p>
+      <p class="font-extrabold">.font-extrabold → 800</p>
+      <p class="font-black">.font-black → 900</p>
+    </div>
+  </section>
+
+  <!-- Letter Spacing -->
+  <section class="grid grid-cols-2 gap-6">
+    <div>
+       <h3 class="font-bold">Letter Spacing (Tracking)</h3>
+      <p>Use <code>tracking-{size}</code> classes.</p>
+      <pre class="bg-gray-800 text-white p-2 rounded font-mono mt-2">Example: &lt;p class="tracking-wide"&gt;Hello&lt;/p&gt;</pre>
+    </div>
+    <div class="space-y-1 p-4 bg-white/25 rounded">
+      <p class="tracking-tighter">.tracking-tighter → -0.05em</p>
+      <p class="tracking-tight">.tracking-tight → -0.025em</p>
+      <p class="tracking-normal">.tracking-normal → 0em</p>
+      <p class="tracking-wide">.tracking-wide → 0.025em</p>
+      <p class="tracking-wider">.tracking-wider → 0.05em</p>
+      <p class="tracking-widest">.tracking-widest → 0.1em</p>
+    </div>
+  </section>
+
+  <!-- Line Height -->
+  <section class="grid grid-cols-2 gap-6">
+    <div>
+       <h3 class="font-bold">Line Height (Leading)</h3>
+      <p>Use <code>leading-{size}</code> classes.</p>
+      <pre class="bg-gray-800 text-white p-2 rounded font-mono mt-2">Example: &lt;p class="leading-relaxed"&gt;Hello&lt;/p&gt;</pre>
+    </div>
+    <div class="space-y-1 p-4 bg-white/25 rounded">
+      <p class="leading-none">.leading-none → 1</p>
+      <p class="leading-tight">.leading-tight → 1.25</p>
+      <p class="leading-snug">.leading-snug → 1.375</p>
+      <p class="leading-normal">.leading-normal → 1.5</p>
+      <p class="leading-relaxed">.leading-relaxed → 1.625</p>
+      <p class="leading-loose">.leading-loose → 2</p>
+    </div>
+  </section>
+
+  <!-- Text Alignment -->
+  <section class="grid grid-cols-2 gap-6">
+    <div>
+       <h3 class="font-bold">Text Alignment</h3>
+      <p>Use <code>text-{alignment}</code> classes.</p>
+      <pre class="bg-gray-800 text-white p-2 rounded font-mono mt-2">Example: &lt;p class="text-center"&gt;Hello&lt;/p&gt;</pre>
+    </div>
+    <div class="space-y-1 p-4 bg-white/25 rounded">
+      <p class="text-left">.text-left → Left aligned</p>
+      <p class="text-center">.text-center → Center aligned</p>
+      <p class="text-right">.text-right → Right aligned</p>
+      <p class="text-justify">.text-justify → Justified text</p>
+    </div>
+  </section>
+
+  <!-- Text Decoration -->
+  <section class="grid grid-cols-2 gap-6">
+    <div>
+       <h3 class="font-bold">Text Decoration</h3>
+      <p>Use <code>underline</code>, <code>line-through</code>, or <code>no-underline</code>.</p>
+      <pre class="bg-gray-800 text-white p-2 rounded font-mono mt-2">Example: &lt;p class="underline"&gt;Hello&lt;/p&gt;</pre>
+    </div>
+    <div class="space-y-1 p-4 bg-white/25 rounded">
+      <p class="underline">.underline → Underlined</p>
+      <p class="line-through">.line-through → Strikethrough</p>
+      <p class="no-underline">.no-underline → Remove underline</p>
+    </div>
+  </section>
+
+  <!-- Font Style -->
+  <section class="grid grid-cols-2 gap-6">
+    <div>
+       <h3 class="font-bold">Font Style</h3>
+      <p>Use <code>italic</code> or <code>not-italic</code> classes.</p>
+      <pre class="bg-gray-800 text-white p-2 rounded font-mono mt-2">Example: &lt;p class="italic"&gt;Hello&lt;/p&gt;</pre>
+    </div>
+    <div class="space-y-1 p-4 bg-white/25 rounded">
+      <p class="italic">.italic → Italic text</p>
+      <p class="not-italic">.not-italic → Normal text</p>
+    </div>
+  </section>
+
+</main>
+
+
+  </div>
+</body>
+</html>

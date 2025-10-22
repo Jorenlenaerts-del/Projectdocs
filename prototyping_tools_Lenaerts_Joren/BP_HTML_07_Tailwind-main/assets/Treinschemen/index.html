@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perronborden – Station Leuven</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="layout">
+  <!-- SCHERM 1: Groot perronscherm (links) -->
+  <section class="panel panel-large">
+    <div class="bar">
+      <div class="bar-left">
+        <span class="train-emoji" aria-hidden="true">🚆</span>
+        <span class="station">Station Leuven</span>
+      </div>
+      <div class="bar-right">
+        <span class="clock-emoji" aria-hidden="true">🕒</span>
+        <span class="time">12 : 32</span>
+      </div>
+    </div>
+
+    <div class="next">
+      <!-- Zelfde tabelstijl (3 kolommen) -->
+      <div class="grid-head columns-3">
+        <span>Next</span>
+        <span>Destination</span>
+        <span>Arrival</span>
+      </div>
+
+      <div class="grid-row columns-3 main-row">
+        <span class="code">IC265</span>
+        <span class="route"><b>Leuven</b> <span class="arrow">→</span> <b>Arlon</b></span>
+        <span class="arr">12:37 <span class="delay">+5’</span></span>
+      </div>
+
+      <div class="rule"></div>
+
+      <!-- lijst in exact dezelfde 3-koloms opmaak -->
+      <div class="grid-row columns-3">
+        <span class="code">IC265</span>
+        <span class="route">Leuven <span class="arrow">→</span> Arlon</span>
+        <span class="arr">12:37 <span class="delay">+5’</span></span>
+      </div>
+      <div class="grid-row columns-3">
+        <span class="code">IC265</span>
+        <span class="route">Leuven <span class="arrow">→</span> Arlon</span>
+        <span class="arr">12:37 <span class="delay">+5’</span></span>
+      </div>
+      <div class="grid-row columns-3">
+        <span class="code">IC265</span>
+        <span class="route">Leuven <span class="arrow">→</span> Arlon</span>
+        <span class="arr">12:37 <span class="delay">+5’</span></span>
+      </div>
+      <div class="grid-row columns-3 no-border">
+        <span class="code">IC265</span>
+        <span class="route">Leuven <span class="arrow">→</span> Arlon</span>
+        <span class="arr">12:37 <span class="delay">+5’</span></span>
+      </div>
+    </div>
+
+    <!-- Groot perronnummer -->
+    <div class="platform">4</div>
+    <div class="caption">Perronscherm</div>
+  </section>
+
+  <!-- SCHERM 2: Klein routekaartje (rechtsboven) -->
+  <section class="panel panel-small">
+    <div class="bar bar-small">
+      <div class="bar-left">
+        <span class="train-emoji" aria-hidden="true">🚆</span>
+        <span class="station small">Station Leuven</span>
+      </div>
+      <div class="bar-right">
+        <span class="clock-emoji" aria-hidden="true">🕒</span>
+        <span class="time">12 : 32</span>
+      </div>
+    </div>
+
+    <div class="mini">
+      <ol class="stops">
+        <li class="active">Aarschot</li>
+        <li>Lier</li>
+        <li>Antwerpen Berchem</li>
+        <li>Leuven</li>
+      </ol>
+
+      <div class="mini-icons">
+        <span class="bubble">%</span>
+        <span class="bubble" aria-label="toegankelijk">♿</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHERM 3: Vertrektabel (onderaan) – NU DEZELFDE TABELVORMING -->
+  <section class="panel panel-wide">
+    <div class="bar">
+      <div class="bar-left">
+        <span class="train-emoji" aria-hidden="true">🚆</span>
+        <span class="station">Station Leuven</span>
+      </div>
+      <div class="bar-right">
+        <span class="clock-emoji" aria-hidden="true">🕒</span>
+        <span class="time">12 : 32</span>
+      </div>
+    </div>
+
+    <!-- header in dezelfde stijl, maar 4 kolommen -->
+    <div class="grid-head columns-4">
+      <span>Departure</span>
+      <span>Destination</span>
+      <span>Train</span>
+      <span>Platform</span>
+    </div>
+
+    <!-- rijen in dezelfde stijl (4 kolommen) -->
+    <div class="grid-row columns-4">
+      <span class="timecell">14 : 46 <span class="delay">+6’</span></span>
+      <span>Leuven</span>
+      <span>IC</span>
+      <span>2</span>
+    </div>
+    <div class="grid-row columns-4">
+      <span class="timecell">14 : 46</span>
+      <span>Brussel Zuid/Midi</span>
+      <span>IC</span>
+      <span>2</span>
+    </div>
+    <div class="grid-row columns-4">
+      <span class="timecell">14 : 46</span>
+      <span>Lier</span>
+      <span>L</span>
+      <span>2</span>
+    </div>
+    <div class="grid-row columns-4">
+      <span class="timecell">14 : 46 <span class="delay small">+1’</span></span>
+      <span>Brussel Zuid/Midi</span>
+      <span>IC</span>
+      <span>2</span>
+    </div>
+    <div class="grid-row columns-4">
+      <span class="timecell">14 : 46</span>
+      <span>Aarschot</span>
+      <span>IC</span>
+      <span>2</span>
+    </div>
+    <div class="grid-row columns-4">
+      <span class="timecell">14 : 46</span>
+      <span>Antwerpen Berchem</span>
+      <span>IC</span>
+      <span>2</span>
+    </div>
+    <div class="grid-row columns-4">
+      <span class="timecell">14 : 46 <span class="delay">+3’</span></span>
+      <span>Diest</span>
+      <span>IC</span>
+      <span>2</span>
+    </div>
+    <div class="grid-row columns-4">
+      <span class="timecell">14 : 46</span>
+      <span>Brussel Zuid/Midi</span>
+      <span>IC</span>
+      <span>2</span>
+    </div>
+    <div class="grid-row columns-4 no-border">
+      <span class="timecell">14 : 46</span>
+      <span>Antwerpen Centraal</span>
+      <span>IC</span>
+      <span>2</span>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

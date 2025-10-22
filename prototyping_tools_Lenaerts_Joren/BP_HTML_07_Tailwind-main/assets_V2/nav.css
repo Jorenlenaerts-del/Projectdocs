@@ -1,0 +1,42 @@
+/* ===== NAVIGATIEKNOPPEN ===== */
+.vertical-buttons {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column; /* 🔹 zet ze onder elkaar */
+  align-items: flex-start; /* uitlijning links */
+  gap: 1.2rem; /* 🔹 ruimte tussen de knoppen */
+}
+
+/* ===== KNOPSTIJL ===== */
+.vertical-buttons a {
+  display: inline-block;
+  background: #222;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 100%; /* 🔹 zorgt dat alle knoppen even breed zijn */
+  text-align: center; /* tekst in het midden */
+}
+
+/* Hover- en active-effect */
+.vertical-buttons a:hover {
+  background: #444; /* 🔹 iets lichter grijs bij hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.vertical-buttons a:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 768px) {
+}
