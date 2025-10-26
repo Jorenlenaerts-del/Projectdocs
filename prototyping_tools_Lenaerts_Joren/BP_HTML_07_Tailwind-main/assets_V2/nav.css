@@ -1,42 +1,66 @@
-/* ===== NAVIGATIEKNOPPEN ===== */
-.vertical-buttons {
-  list-style: none;
-  padding: 0;
-  margin: 2rem 0;
-  display: flex;
-  flex-direction: column; /* 🔹 zet ze onder elkaar */
-  align-items: flex-start; /* uitlijning links */
-  gap: 1.2rem; /* 🔹 ruimte tussen de knoppen */
+/* ===== HEADER EN NAVIGATIE (bovenaan) ===== */
+.main-header {
+  padding: 1rem 2rem;
+  border-bottom: 2px solid #ddd;
+  background-color: #fff;
 }
 
-/* ===== KNOPSTIJL ===== */
-.vertical-buttons a {
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* breekt netjes op mobiel */
+}
+
+/* ===== WEEKKNOPPEN: basisstijl (shared) ===== */
+.week-nav {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.week-nav a {
   display: inline-block;
+  text-decoration: none;
   background: #222;
   color: #fff;
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
   font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.15s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  width: 100%; /* 🔹 zorgt dat alle knoppen even breed zijn */
-  text-align: center; /* tekst in het midden */
+  transition: background .25s ease, transform .15s ease;
 }
 
-/* Hover- en active-effect */
-.vertical-buttons a:hover {
-  background: #444; /* 🔹 iets lichter grijs bij hover */
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+.week-nav a:hover { background: #444; transform: translateY(-2px); }
+
+/* Actieve pagina (oranje) — zet aria-current="page" op de juiste link */
+.week-nav a[aria-current="page"] {
+  background: #ff914d;
+  color: #fff;
+  cursor: default;
+  pointer-events: none; /* niet klikbaar */
 }
 
-.vertical-buttons a:active {
-  transform: translateY(0);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+/* ===== FOOTER: zelfde stijl, maar compacter ===== */
+/* In HTML: <ul class="week-nav footer-nav"> */
+.footer-nav { justify-content: center; flex-wrap: wrap; }
+
+.footer-nav a {
+  padding: 0.5rem 1rem;  /* kleiner */
+  font-size: 0.9rem;     /* kleiner */
+  transform: none;       /* geen 'lift' animatie nodig onderaan */
 }
 
-@media (min-width: 768px) {
+.footer-nav a:hover { background: #444; }
+
+/* ===== Mobiel ===== */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .week-nav { flex-wrap: wrap; justify-content: center; }
 }
