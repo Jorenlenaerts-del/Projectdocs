@@ -1,0 +1,22 @@
+p{
+    margin-top: .5em;
+}
+h1{ 
+    font-size: 3em;
+    font-weight: extrabold;
+}
+h2{ 
+    font-size: 1.5em;
+    font-weight: bold;
+    opacity: .5; 
+}
+/* ===== TITELS ===== */
+h1.title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 3rem; /* 🔹 maakt hem groot (≈ 48px bij standaard 16px) */
+  color: #111;     /* donkerdere kleur voor contrast */
+  margin-bottom: 1rem;
+  text-transform: uppercase; /* optioneel: hoofdletters */
+  letter-spacing: 1px;       /* optioneel: wat ruimte tussen letters */
+}
