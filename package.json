@@ -1,0 +1,15 @@
+{
+  "name": "jl-progressfile",
+  "version": "1.0.0",
+  "description": "Progressfile with Tailwind CSS",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./output.css --watch"
+  },
+  "keywords": [],
+  "author": "Joren Lenaerts",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.0"
+  }
+}

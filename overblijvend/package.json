@@ -1,0 +1,19 @@
+{
+  "name": "ap_html_07_tailwind",
+  "version": "1.0.0",
+  "description": "Basic HTML site with Tailwind CSS",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "dev": "npm run build & npx live-server ./"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "live-server": "^1.2.2",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
+  }
+}
