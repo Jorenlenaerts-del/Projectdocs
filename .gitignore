@@ -1,0 +1,12 @@
+# Ignore node_modules (already present)
+node_modules/
+
+# Ignore build output
+/dist/
+
+# Ignore asset folders
+/assets/
+/assets_V2/
+
+# Ignore all photos
+/Foto/
