@@ -4,56 +4,104 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Week 2 — Prototyping Tools</title>
-  <link href="./output.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body style="background-color: #072AC8; color: white;">
+
   <!-- HEADER -->
-  <header class="border-b border-gray-200 bg-white shadow-sm">
+  <header style="background-color: #5169D8; border-bottom: 1px solid #5169D8;" class="shadow-sm">
     <div class="max-w-5xl mx-auto px-6 py-6">
-      <h1 class="text-3xl font-bold text-gray-900 mb-6">PROGRESSFILE — PROTOTYPING TOOLS</h1>
+      <h1 class="text-3xl font-bold mb-6">PROGRESSFILE — PROTOTYPING TOOLS</h1>
       <nav>
-        <ul class="flex gap-6 text-sm font-semibold flex-wrap">
-          <li><a href="./z1Progressfile_Joren.index.html" class="text-gray-700 hover:text-blue-600 transition">HOME</a></li>
-          <li><a href="./z2Week1.html" class="text-gray-700 hover:text-blue-600 transition">Week 1</a></li>
-          <li><a href="./z3Week2.html" class="text-blue-600 border-b-2 border-blue-600 pb-2" aria-current="page">Week 2</a></li>
-          <li><a href="./z4Week3.html" class="text-gray-700 hover:text-blue-600 transition">Week 3</a></li>
-          <li><a href="./z5Week4.html" class="text-gray-700 hover:text-blue-600 transition">Week 4</a></li>
-          <li><a href="./z6Week5.html" class="text-gray-700 hover:text-blue-600 transition">Week 5</a></li>
-          <li><a href="./z7Week6.html" class="text-gray-700 hover:text-blue-600 transition">Week 6</a></li>
+        <ul class="flex gap-6 text-sm font-semibold flex-wrap items-center">
+          <li><a href="index.html" style="color: white;" class="hover:text-[#58D0A8] transition">HOME</a></li>
+                    <li><a href="Contactfile.html" style="color: white;" class="hover:text-[#58D0A8] transition">CONTACT</a></li>
+
+          <!-- DROPDOWN MENU -->
+          <li class="relative">
+            <button id="dropdownBtn" style="color: white;" class="hover:text-[#58D0A8] transition flex items-center gap-1">
+              WEKEN
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            
+            <!-- Dropdown Content -->
+            <div id="dropdownMenu" class="hidden absolute left-0 mt-2 w-40 rounded-lg shadow-lg" style="background-color: #5169D8; border: 1px solid #58D0A8;">
+              <ul class="py-2">
+                <li><a href="./z2Week1.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 1</a></li>
+                <li><a href="./z3Week2.html" style="color: white; background-color: #58D0A8; color: #072AC8;" class="block px-4 py-2 font-semibold" aria-current="page">Week 2</a></li>                
+                <li><a href="./z4Week3.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 3</a></li>
+                <li><a href="./z5Week4.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 4</a></li>
+                <li><a href="./z6Week5.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 5</a></li>
+                <li><a href="./z7Week6.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 6</a></li>
+                <li><a href="./z8Week7.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 7</a></li>
+                <li><a href="./z9Week8.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 8</a></li>
+                <li><a href="./z10Week9.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 9</a></li>
+                <li><a href="./z11Week10.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 10</a></li>
+                <li><a href="./z12Week11.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 11</a></li>
+                <li><a href="./z13Week12.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 12</a></li>
+                
+              </ul>
+            </div>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main class="max-w-5xl mx-auto px-6 py-12">
     <header class="mb-8">
-      <h1 class="text-3xl font-bold text-gray-900 mb-2">Week 2</h1>
-      <h2 class="text-xl font-semibold text-gray-700 mb-4">Uitwerking schetsen</h2>
-      <p class="text-gray-700 leading-relaxed text-lg">
-        In week 2 heb ik verder gebouwd op de schetsen uit week 1. Ik heb de ontwerpen verfijnd en bekeken waar alle informatie het best geplaatst kan worden, en welke elementen minder relevant waren. Deze heb ik weggelaten om de focus te behouden. Na het uitwerken van zes low-fidelity ontwerpen, ben ik begonnen te experimenteren in Figma. Daar heb ik de drie meest interessante ontwerpen uitgewerkt tot prototypes en high-fidelity versies.
+      <h1 class="text-3xl font-bold mb-2">Week 2</h1>
+
+      <p class="leading-relaxed text-lg mt-4">
+        In week 2 heb ik verder gebouwd op de schetsen uit week 1. 
+        Ik heb de ontwerpen verfijnd en bekeken waar alle informatie het best geplaatst kan worden, en welke elementen minder 
+        relevant waren deze heb ik weggelaten om de focus te behouden. Na het uitwerken van zes low-fidelity ontwerpen ben ik begonnen 
+        te experimenteren in Figma. Daar heb ik de drie meest interessante ontwerpen uitgewerkt tot prototypes en high-fidelity versies.
       </p>
     </header>
 
-    <section class="bg-white rounded-lg shadow-md p-8">
-    </section>
+    <h3 class="text-xl font-semibold mb-4">Van low-fi naar de eerste high fidelity prototypes</h3>
+
+    <div class="flex flex-wrap gap-4">
+      <img src="Foto/Week_2/Overzichtsschermen_2.png" 
+           alt="Overzichtsscherm"
+           class="w-64 object-contain rounded-lg border-2 border-[#58D0A8]" />
+
+      <img src="Foto/Week_2/Perronscherm_2.png" 
+           alt="Perronscherm"
+           class="w-64 object-contain rounded-lg border-2 border-[#58D0A8]" />
+
+      <img src="Foto/Week_2/Wagonindelingsschermen_2.png" 
+           alt="Wagonindelingsschermen"
+           class="w-64 object-contain rounded-lg border-2 border-[#58D0A8]" />
+    </div>
   </main>
 
-  <!-- Alleen navigatie in de footer -->
-  <footer class="border-t border-gray-200 bg-white mt-12 py-8">
+  <!-- FOOTER -->
+  <footer style="background-color: #5169D8; border-top: 1px solid #5169D8;" class="py-8 mt-12">
     <div class="max-w-5xl mx-auto px-6">
-      <nav class="mb-4">
-        <ul class="flex gap-6 text-sm font-semibold flex-wrap">
-          <li><a href="./z1Progressfile_Joren.index.html" class="text-gray-700 hover:text-blue-600 transition">HOME</a></li>
-          <li><a href="./z2Week1.html" class="text-gray-700 hover:text-blue-600 transition">Week 1</a></li>
-          <li><a href="./z3Week2.html" class="text-blue-600" aria-current="page">Week 2</a></li>
-          <li><a href="./z4Week3.html" class="text-gray-700 hover:text-blue-600 transition">Week 3</a></li>
-          <li><a href="./z5Week4.html" class="text-gray-700 hover:text-blue-600 transition">Week 4</a></li>
-          <li><a href="./z6Week5.html" class="text-gray-700 hover:text-blue-600 transition">Week 5</a></li>
-          <li><a href="./z7Week6.html" class="text-gray-700 hover:text-blue-600 transition">Week 6</a></li>
-        </ul>
-      </nav>
-      <p class="text-gray-500 text-sm">© 2025 Joren Lenaerts</p>
+      <p class="text-sm">© 2025 Joren Lenaerts</p>
     </div>
   </footer>
+
+  <script>
+    const dropdownBtn = document.getElementById('dropdownBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    dropdownBtn.addEventListener('click', () => {
+      dropdownMenu.classList.toggle('hidden');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownMenu.classList.add('hidden');
+      }
+    });
+  </script>
+
 </body>
 </html>
