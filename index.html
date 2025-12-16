@@ -1,104 +1,347 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PROGRESSIE_FILE_JOREN_LENAERTS — HOME</title>
+  <title>PROGRESSIE_FILE_JOREN_LENAERTS</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fadeInUp {
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    /* Interactive gradient button styles */
+    .gradient-week-btn {
+      background: linear-gradient(135deg, #41987b 0%, #3b82f6 100%);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gradient-week-btn span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .gradient-week-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+    }
+
+    /* Week card with interactive gradient */
+    .week-card {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      min-height: 140px;
+    }
+
+    .week-card::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(65, 152, 123, 0.1) 50%, transparent 70%);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .week-card:hover::before {
+      width: 500px;
+      height: 500px;
+    }
+
+    .week-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Image border with gradient effect */
+    .image-gradient-border {
+      position: relative;
+      padding: 4px;
+      background: linear-gradient(135deg, #41987b 0%, #3b82f6 100%);
+      border-radius: 0.75rem;
+      transition: all 0.3s ease;
+    }
+
+    .image-gradient-border:hover {
+      background: linear-gradient(135deg, #3b82f6 0%, #41987b 100%);
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .image-gradient-border img {
+      border-radius: 0.5rem;
+      display: block;
+    }
+
+    /* Interactive gradient nav link styles */
+    .gradient-nav-link {
+      background: linear-gradient(135deg, #41987b 0%, #3b82f6 100%);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      padding: 0.5rem 1.25rem;
+      border-radius: 0.5rem;
+      color: white;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .gradient-nav-link::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle, #3b82f6 0%, #2563eb 50%, transparent 70%);
+      transform: translate(-50%, -50%);
+      transition: width 0.5s ease, height 0.5s ease;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .gradient-nav-link:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .gradient-nav-link span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .gradient-nav-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+    }
+
+    /* Dropdown link styles - same gradient as nav links */
+    .dropdown-link {
+      background: linear-gradient(135deg, #41987b 0%, #3b82f6 100%);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      margin: 0.25rem 0.5rem;
+      border-radius: 0.5rem;
+    }
+
+    .dropdown-link::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle, #3b82f6 0%, #2563eb 50%, transparent 70%);
+      transform: translate(-50%, -50%);
+      transition: width 0.5s ease, height 0.5s ease;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .dropdown-link:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .dropdown-link:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+
+    /* Header layout improvements */
+    .header-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .header-title {
+      flex-shrink: 0;
+    }
+
+    .header-nav {
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+    }
+  </style>
 </head>
-<body style="background-color: #072AC8; color: white;">
+<body class="bg-[#ececed]">
 
   <!-- HEADER -->
-  <header style="background-color: #5169D8; border-bottom: 1px solid #5169D8;" class="shadow-sm">
+  <header class="shadow-sm animate-fadeInUp">
     <div class="max-w-5xl mx-auto px-6 py-6">
-      <h1 class="text-3xl font-bold mb-6">PROGRESSFILE — PROTOTYPING TOOLS</h1>
-      <nav>
-        <ul class="flex gap-6 text-sm font-semibold flex-wrap items-center">
-          <!-- HOME - ACTIEVE PAGINA -->
-          <li><a href="index.html" style="color: white; border-bottom: 2px solid #58D0A8; padding-bottom: 0.5rem;" aria-current="page">HOME</a></li>
-          
-          <!-- CONTACT - NIET ACTIEF -->
-          <li><a href="Contactfile.html" style="color: white;" class="hover:text-[#58D0A8] transition">CONTACT</a></li>
-
-          <!-- DROPDOWN MENU -->
-          <li class="relative">
-            <button id="dropdownBtn" style="color: white;" class="hover:text-[#58D0A8] transition flex items-center gap-1">
-              WEKEN
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
+      <div class="header-container">
+        <h1 class="text-3xl font-bold animate-pulse header-title">
+          <a href="index.html" aria-current="page">
+            PROGRESSFILE — PROTOTYPING TOOLS
+          </a>
+        </h1>
+        
+        <nav class="header-nav">
+          <ul class="flex gap-6 text-sm font-semibold flex-wrap items-center">
             
-            <!-- Dropdown Content -->
-            <div id="dropdownMenu" class="hidden absolute left-0 mt-2 w-40 rounded-lg shadow-lg" style="background-color: #5169D8; border: 1px solid #58D0A8;">
-              <ul class="py-2">
-                <li><a href="./z2Week1.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 1</a></li>
-                <li><a href="./z3Week2.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 2</a></li>
-                <li><a href="./z4Week3.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 3</a></li>
-                <li><a href="./z5Week4.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 4</a></li>
-                <li><a href="./z6Week5.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 5</a></li>
-                <li><a href="./z7Week6.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 6</a></li>
-                <li><a href="./z8Week7.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 7</a></li>
-                <li><a href="./z9Week8.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 8</a></li>
-                <li><a href="./z10Week9.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 9</a></li>
-                <li><a href="./z11Week10.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 10</a></li>
-                <li><a href="./z12Week11.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 11</a></li>
-                <li><a href="./z13Week12.html" style="color: white;" class="block px-4 py-2 hover:bg-[#58D0A8] hover:text-[#072AC8] transition">Week 12</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </nav>
+            <!-- HOME Link -->
+            <li>
+              <a href="index.html" class="gradient-nav-link flex items-center">
+                <span>HOME</span>
+              </a>
+            </li>
+
+            <!-- CONTACT Link -->
+            <li>
+              <a href="Contactfile.html" class="gradient-nav-link flex items-center">
+                <span>CONTACT</span>
+              </a>
+            </li>
+
+            <!-- DROPDOWN MENU -->
+            <li class="relative w-auto z-100">
+              <button id="dropdownBtn" class="gradient-nav-link flex items-center gap-1">
+                <span>Weken</span>
+                <svg class="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+
+              <!-- Dropdown Menu -->
+              <div id="dropdownMenu" class="hidden absolute right-0 top-full mt-2 bg-white rounded-lg shadow-xl border border-gray-200 z-50 min-w-[200px]">
+                <ul class="py-2">
+                  <li>
+                    <a href="./z2Week1.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 1</a>
+                  </li>
+                  <li>
+                    <a href="./z3Week2.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 2</a>
+                  </li>
+                  <li>
+                    <a href="./z4Week3.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 3</a>
+                  </li>
+                  <li>
+                    <a href="./z5Week4.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 4</a>
+                  </li>
+                  <li>
+                    <a href="./z6Week5.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 5</a>
+                  </li>
+                  <li>
+                    <a href="./z7Week6.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 6</a>
+                  </li>
+                  <li>
+                    <a href="./z8Week7.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 7</a>
+                  </li>
+                  <li>
+                    <a href="./z9Week8.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 8</a>
+                  </li>
+                  <li>
+                    <a href="./z10Week9.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 9</a>
+                  </li>
+                  <li>
+                    <a href="./z11Week10.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 10</a>
+                  </li>
+                  <li>
+                    <a href="./z12Week11.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 11</a>
+                  </li>
+                  <li>
+                    <a href="./z13Week12.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 12</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
   <!-- MAIN CONTENT -->
   <main class="max-w-5xl mx-auto px-6 py-10">
+
     <!-- Hero Section -->
     <header class="mb-12 text-left">
       <h1 class="text-5xl font-bold mb-3">Joren Lenaerts</h1>
     </header>
 
     <!-- First Text Section -->
-    <section class="mb-8">
-      <h3 class="text-2xl font-bold mb-4" style="color: #58D0A8;">Opdrachtbeschrijving</h3>
+    <section class="mb-8" style="animation-delay: 0.2s;">
+      <h3 class="text-2xl font-bold mb-4">Opdrachtbeschrijving</h3>
       <p class="leading-relaxed text-lg">
-        Het vak Prototyping Tools richtte zich op de essentiële stappen in het ontwerpproces, van low fidelity tot high fidelity prototypes. De centrale opdracht bestond uit het ontwerpen van drie informatieschermen voor treinen: een overzichtsscherm, een wagonscherm en een perronscherm. Dit project werd uitgevoerd gedurende het eerste semester.
+        Het vak Prototyping Tools richtte zich op de essentiële stappen in het ontwerpproces, van low fidelity tot high fidelity prototypes. De centrale opdracht bestond uit het <strong>ontwerpen van drie informatieschermen voor treinen: een overzichtsscherm, een wagonscherm en een perronscherm</strong>. Dit project werd uitgevoerd gedurende het eerste semester.
       </p>
     </section>
 
     <!-- Visual Divider with Prototyping Image -->
     <div class="my-12 flex justify-center">
-      <img 
-        src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&q=80" 
-        alt="Prototyping wireframes and design process" 
-        class="w-full max-w-3xl rounded-lg border-4 border-[#58D0A8] shadow-2xl object-cover"
-        style="max-height: 400px;"
-      />
+      <div class="image-gradient-border">
+        <img 
+          id="protoImage"
+          src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&q=80" 
+          alt="Prototyping wireframes and design process" 
+          class="w-full max-w-3xl object-cover cursor-pointer"
+          style="max-height: 400px;"
+        />
+      </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black/70 flex items-center justify-center hidden z-50">
+      <div class="relative max-w-4xl w-full mx-4">
+        <button id="closeModal" class="absolute top-2 right-2 text-white text-3xl font-bold">&times;</button>
+        <img id="modalImage" src="" alt="Expanded prototype" class="w-full rounded-lg shadow-xl object-contain" />
+      </div>
     </div>
 
     <!-- Second Text Section -->
-    <section class="mb-8">
+    <section class="mb-8 animate-fadeInUp" style="animation-delay: 0.6s;">
       <p class="leading-relaxed text-lg">
-        Na afronding van het ontwerpproces moesten alle stappen en de progressie worden samengebundeld en online geplaatst in een progressiebestand op GitHub. Aanvankelijk werd de interface gebouwd met HTML en CSS, maar later in het semester werd CSS vervangen door Tailwind voor de basisopmaak.
+        Na afronding van het ontwerpproces moesten alle stappen en de progressie worden samengebundeld en <strong>online geplaatst in een progressiebestand op GitHub</strong>. Aanvankelijk werd de interface gebouwd met HTML en CSS, maar later in het semester werd CSS vervangen door Tailwind voor de basisopmaak.
       </p>
       <p class="leading-relaxed text-lg mt-6">
-        Als uitbreiding op deze schermen werd een interactief gsm-model ontwikkeld, waarbij de designstijl van de eerdere ontwerpen als basis diende. Voor deze taak werd gebruikgemaakt van Figma.
+        Als uitbreiding op deze schermen werd <strong>een interactief gsm-model</strong> ontwikkeld, waarbij de designstijl van de eerdere ontwerpen als basis diende. Voor deze taak werd gebruikgemaakt van Figma.
       </p>
     </section>
 
     <!-- Call to Action -->
-    <div class="mt-12 p-8 rounded-lg text-center" style="background-color: #5169D8; border: 2px solid #58D0A8;">
+    <div class="mt-12 p-8 rounded-lg text-center animate-fadeInUp" style="animation-delay: 0.8s; background-color: #f7f7f7; border: 2px solid #41987b;">
       <h3 class="text-2xl font-bold mb-4">Bekijk mijn progressie</h3>
       <p class="mb-6 text-lg">Ontdek week per week hoe ik mijn prototypes heb ontwikkeld</p>
-      <button id="ctaDropdownBtn" class="px-8 py-3 rounded-lg font-semibold text-lg transition hover:opacity-90" style="background-color: #58D0A8; color: #072AC8;">
-        Ga naar weken →
+      <button id="ctaDropdownBtn" class="gradient-week-btn px-8 py-3 rounded-lg font-semibold text-lg transition text-white">
+        <span>Ga naar weken →</span>
       </button>
     </div>
   </main>
 
   <!-- FOOTER -->
-  <footer style="background-color: #5169D8; border-top: 1px solid #5169D8;" class="py-8 mt-12">
+  <footer class="bg-[#f7f7f7] border-t border-[#41987b] py-8 mt-12 animate-fadeInUp" style="animation-delay: 1s;">
     <div class="max-w-5xl mx-auto px-6">
       <p class="text-sm">© 2025 Joren Lenaerts</p>
     </div>
@@ -108,10 +351,40 @@
     const dropdownBtn = document.getElementById('dropdownBtn');
     const dropdownMenu = document.getElementById('dropdownMenu');
     const ctaDropdownBtn = document.getElementById('ctaDropdownBtn');
+    const protoImage = document.getElementById('protoImage');
+    const imageModal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const closeModal = document.getElementById('closeModal');
 
-    // Regular dropdown toggle
+    let hideTimeout;
+
+    // Show dropdown on hover
+    dropdownBtn.addEventListener('mouseenter', () => {
+      clearTimeout(hideTimeout);
+      dropdownMenu.classList.remove('hidden');
+    });
+
+    // Also show on click for mobile
     dropdownBtn.addEventListener('click', () => {
       dropdownMenu.classList.toggle('hidden');
+    });
+
+    // Keep dropdown visible when hovering over it
+    dropdownMenu.addEventListener('mouseenter', () => {
+      clearTimeout(hideTimeout);
+    });
+
+    // Hide dropdown when mouse leaves both button and menu
+    dropdownBtn.addEventListener('mouseleave', () => {
+      hideTimeout = setTimeout(() => {
+        dropdownMenu.classList.add('hidden');
+      }, 300);
+    });
+
+    dropdownMenu.addEventListener('mouseleave', () => {
+      hideTimeout = setTimeout(() => {
+        dropdownMenu.classList.add('hidden');
+      }, 300);
     });
 
     // CTA button opens dropdown
@@ -125,6 +398,64 @@
       if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target) && !ctaDropdownBtn.contains(e.target)) {
         dropdownMenu.classList.add('hidden');
       }
+    });
+
+    // Image modal functionality
+    protoImage.addEventListener('click', () => {
+      modalImage.src = protoImage.src;
+      imageModal.classList.remove('hidden');
+    });
+
+    closeModal.addEventListener('click', () => {
+      imageModal.classList.add('hidden');
+    });
+
+    imageModal.addEventListener('click', (e) => {
+      if (e.target === imageModal) {
+        imageModal.classList.add('hidden');
+      }
+    });
+
+    // Advanced cursor-following gradient effect
+    document.querySelectorAll('.gradient-week-btn, .gradient-nav-link').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const beforeElement = btn.querySelector('::before') || btn;
+        btn.style.setProperty('--mouse-x', `${x}px`);
+        btn.style.setProperty('--mouse-y', `${y}px`);
+        
+        // Update the position of the ::before pseudo-element
+        const before = window.getComputedStyle(btn, '::before');
+        btn.style.setProperty('--x', `${x}px`);
+        btn.style.setProperty('--y', `${y}px`);
+      });
+    });
+
+    // Enhanced gradient following with CSS variables
+    const style = document.createElement('style');
+    style.textContent = `
+      .gradient-nav-link::before,
+      .dropdown-link::before {
+        left: var(--mouse-x, 50%) !important;
+        top: var(--mouse-y, 50%) !important;
+        transform: translate(-50%, -50%) !important;
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Cursor-following effect for dropdown links
+    document.querySelectorAll('.dropdown-link').forEach(link => {
+      link.addEventListener('mousemove', (e) => {
+        const rect = link.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        link.style.setProperty('--mouse-x', `${x}px`);
+        link.style.setProperty('--mouse-y', `${y}px`);
+      });
     });
   </script>
 
