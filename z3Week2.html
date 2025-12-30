@@ -3,14 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PROGRESSIE_FILE_JOREN_LENAERTS</title>
+  <title>Week 2 - Progressfile Joren Lenaerts</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    @tailwind base;
-    @tailwind components;
-    @tailwind utilities;
-
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -26,307 +22,284 @@
     }
 
     .animate-fadeIn {
-      animation: fadeIn 1s ease-out forwards;
+      animation: fadeIn 0.3s ease-out forwards;
     }
 
-    /* Interactive gradient button styles */
-    .gradient-week-btn {
-      background: linear-gradient(135deg, #41987b 0%, #3b82f6 100%);
-      transition: all 0.3s ease;
-      position: relative;
+    body.modal-open {
       overflow: hidden;
     }
 
-    .gradient-week-btn span {
+    body {
+      background: #ececed;
       position: relative;
-      z-index: 1;
+      min-height: 100vh;
     }
 
-    .gradient-week-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
-    }
-
-    /* Week card with interactive gradient */
-    .week-card {
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      min-height: 140px;
-    }
-
-    .week-card::before {
+    body::before {
       content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(65, 152, 123, 0.1) 50%, transparent 70%);
-      transform: translate(-50%, -50%);
-      transition: width 0.6s ease, height 0.6s ease;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .week-card:hover::before {
-      width: 500px;
-      height: 500px;
-    }
-
-    .week-card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Image border with gradient effect */
-    .image-gradient-border {
-      position: relative;
-      padding: 4px;
-      background: linear-gradient(135deg, #41987b 0%, #3b82f6 100%);
-      border-radius: 0.75rem;
-      transition: all 0.3s ease;
-    }
-
-    .image-gradient-border:hover {
-      background: linear-gradient(135deg, #3b82f6 0%, #41987b 100%);
-      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
-      transform: translateY(-2px);
-    }
-
-    .image-gradient-border img {
-      border-radius: 0.5rem;
-      display: block;
-    }
-
-    /* Interactive gradient nav link styles */
-    .gradient-nav-link {
-      background: linear-gradient(135deg, #41987b 0%, #3b82f6 100%);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      padding: 0.5rem 1.25rem;
-      border-radius: 0.5rem;
-      color: white;
-      font-weight: 600;
-      display: inline-block;
-    }
-
-    .gradient-nav-link::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background: radial-gradient(circle, #3b82f6 0%, #2563eb 50%, transparent 70%);
-      transform: translate(-50%, -50%);
-      transition: width 0.5s ease, height 0.5s ease;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .gradient-nav-link:hover::before {
-      width: 300px;
-      height: 300px;
-    }
-
-    .gradient-nav-link span {
-      position: relative;
-      z-index: 1;
-    }
-
-    .gradient-nav-link:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
-    }
-
-    /* Dropdown link styles - same gradient as nav links */
-    .dropdown-link {
-      background: linear-gradient(135deg, #41987b 0%, #3b82f6 100%);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      margin: 0.25rem 0.5rem;
-      border-radius: 0.5rem;
-    }
-
-    .dropdown-link::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background: radial-gradient(circle, #3b82f6 0%, #2563eb 50%, transparent 70%);
-      transform: translate(-50%, -50%);
-      transition: width 0.5s ease, height 0.5s ease;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .dropdown-link:hover::before {
-      width: 300px;
-      height: 300px;
-    }
-
-    .dropdown-link:hover {
-      transform: translateX(4px);
-      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-    }
-
-    /* Header layout improvements */
-    .header-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .header-title {
-      flex-shrink: 0;
-    }
-
-    .header-nav {
-      display: flex;
-      justify-content: flex-start;
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
+      height: 100%;
+      background: radial-gradient(
+        30px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(65, 152, 123, 0.6) 0%,
+        rgba(65, 152, 123, 0.6) 70%,
+        transparent 100%
+      );
+      pointer-events: none;
+      z-index: 0;
+      transition: none;
+    }
+
+    body > * {
+      position: relative;
+      z-index: 1;
     }
   </style>
 </head>
-<body class="bg-[#ececed]">
+<body class="min-h-screen">
 
-  <!-- HEADER -->
   <header class="shadow-sm animate-fadeInUp">
     <div class="max-w-5xl mx-auto px-6 py-6">
-      <div class="header-container">
-        <h1 class="text-3xl font-bold animate-pulse header-title">
-          <a href="index.html" aria-current="page">
-            PROGRESSFILE — PROTOTYPING TOOLS
-          </a>
-        </h1>
-        
-        <nav class="header-nav">
-          <ul class="flex gap-6 text-sm font-semibold flex-wrap items-center">
-            
-            <!-- HOME Link -->
-            <li>
-              <a href="index.html" class="gradient-nav-link flex items-center">
-                <span>HOME</span>
-              </a>
-            </li>
-
-            <!-- CONTACT Link -->
-            <li>
-              <a href="Contactfile.html" class="gradient-nav-link flex items-center">
-                <span>CONTACT</span>
-              </a>
-            </li>
-
-            <!-- DROPDOWN MENU -->
-            <li class="relative w-auto z-100">
-              <button id="dropdownBtn" class="gradient-nav-link flex items-center gap-1">
-                <span>Weken</span>
-                <svg class="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-
-              <!-- Dropdown Menu -->
-              <div id="dropdownMenu" class="hidden absolute right-0 top-full mt-2 bg-white rounded-lg shadow-xl border border-gray-200 z-50 min-w-[200px]">
-                <ul class="py-2">
-                  <li>
-                    <a href="./z2Week1.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 1</a>
-                  </li>
-                  <li>
-                    <a href="./z3Week2.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 2</a>
-                  </li>
-                  <li>
-                    <a href="./z4Week3.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 3</a>
-                  </li>
-                  <li>
-                    <a href="./z5Week4.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 4</a>
-                  </li>
-                  <li>
-                    <a href="./z6Week5.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 5</a>
-                  </li>
-                  <li>
-                    <a href="./z7Week6.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 6</a>
-                  </li>
-                  <li>
-                    <a href="./z8Week7.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 7</a>
-                  </li>
-                  <li>
-                    <a href="./z9Week8.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 8</a>
-                  </li>
-                  <li>
-                    <a href="./z10Week9.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 9</a>
-                  </li>
-                  <li>
-                    <a href="./z11Week10.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 10</a>
-                  </li>
-                  <li>
-                    <a href="./z12Week11.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 11</a>
-                  </li>
-                  <li>
-                    <a href="./z13Week12.html" class="dropdown-link block px-4 py-2 text-white font-semibold transition rounded-mx-1">Week 12</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <h1 class="text-3xl font-bold mb-6 animate-pulse">
+        <a href="index.html" class="border-b-2 border-[#41987b] pb-1 hover:text-[#41987b] transition">
+        PROGRESSFILE — PROTOTYPING TOOLS
+        </a>
+      </h1>
+      <nav>
+        <ul class="flex gap-4 text-sm font-semibold flex-wrap items-center">
+          <li>
+            <a href="index.html" class="px-6 py-2 bg-white border-2 border-[#41987b] text-[#41987b] rounded-lg font-semibold transition-all duration-300 hover:bg-[#41987b] hover:text-white hover:scale-105 hover:shadow-lg flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+              </svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <button id="dropdownBtn" class="px-6 py-2 bg-white border-2 border-[#41987b] text-[#41987b] rounded-lg font-semibold transition-all duration-300 hover:bg-[#41987b] hover:text-white hover:scale-105 hover:shadow-lg flex items-center gap-2">
+              Weken
+              <svg class="w-4 h-4 transition-transform duration-300" id="dropdownIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <a href="Contactfile.html" class="px-6 py-2 bg-white border-2 border-[#41987b] text-[#41987b] rounded-lg font-semibold transition-all duration-300 hover:bg-[#41987b] hover:text-white hover:scale-105 hover:shadow-lg flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <!-- MAIN -->
-  <main class="max-w-5xl mx-auto px-6 py-12 animate-fadeInUp">
-    <header class="mb-8">
-      <h1 class="text-3xl font-bold mb-2">Week 2</h1>
+  <main class="max-w-5xl mx-auto px-6 py-10">
 
-      <p class="leading-relaxed text-lg mt-4">
-        In week 2 heb ik verder gebouwd op de schetsen uit week 1. 
-        Ik heb de ontwerpen verfijnd en bekeken waar alle informatie het best geplaatst kan worden, en welke elementen minder 
-        relevant waren deze heb ik weggelaten om de focus te behouden. Na het uitwerken van zes low-fidelity ontwerpen ben ik begonnen 
-        te experimenteren in Figma. Daar heb ik de drie meest interessante ontwerpen uitgewerkt tot prototypes en high-fidelity versies.
-      </p>
-    </header>
-
-    <h3 class="text-xl font-semibold mb-4">Van low-fi naar de eerste high fidelity prototypes</h3>
-
-    <div class="flex flex-wrap gap-4">
-      <div class="image-gradient-border">
-        <img src="Foto/Week_2/Overzichtsschermen_2.png" alt="Overzichtsscherm" class="w-64 object-contain rounded-lg"/>
-      </div>
-      <div class="image-gradient-border">
-        <img src="Foto/Week_2/Perronscherm_2.png" alt="Perronscherm" class="w-64 object-contain rounded-lg"/>
-      </div>
-      <div class="image-gradient-border">
-        <img src="Foto/Week_2/Wagonindelingsschermen_2.png" alt="Wagonindelingsschermen" class="w-64 object-contain rounded-lg"/>
-      </div>
+    <div class="mb-12 animate-fadeInUp">
+      <h1 class="text-5xl font-bold mb-3">Week 2</h1>
     </div>
+
+    <section class="mb-12 animate-fadeInUp" style="animation-delay: 0.2s;">
+      <h2 class="text-3xl font-bold mb-6">Het starten van een low-fidelity schets op basis van wireframes</h2>
+      <p class="leading-relaxed text-lg mb-4 text-gray-900">
+        Tijdens week twee heb ik mijn eerste schetsen afgewerkt. Daarnaast zijn de ontwerpen verfijnd en heb ik bekeken waar alle informatie het best geplaatst kan worden, en welke elementen minder relevant waren. Na het uitwerken van zes low-fidelity ontwerpen begon ik te experimenteren in Figma. Daar heb ik de drie meest interessante ontwerpen uitgewerkt tot <strong>midi fidelity prototypes</strong>.
+      </p>
+      <p class="leading-relaxed text-lg text-gray-900">
+        Hierdoor werden mijn focuspunten snel duidelijk. Het maken van een <strong>minimalistisch, clean en duidelijke interface</strong> waarop de gebruiker de nodige info direct kan terugvinden zonder overbodige info te moeten verwerken. Dit is de rode draad doorheen mijn ontwerpen.
+      </p>
+    </section>
+
+    <section class="mb-12 animate-fadeInUp" style="animation-delay: 0.4s;">
+      <h3 class="text-2xl font-bold mb-6">Meest interessante schetsen</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
+          <img 
+            src="Foto/Week_2/schets1.png" 
+            alt="Low-fidelity schets 1" 
+            class="w-full rounded border-2 border-[#41987b] mb-3"
+          />
+          <p class="text-sm text-gray-600 text-center font-semibold">Low-fidelity schets 1</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
+          <img 
+            src="Foto/Week_2/schets2.png" 
+            alt="Low-fidelity schets 2" 
+            class="w-full rounded border-2 border-[#41987b] mb-3"
+          />
+          <p class="text-sm text-gray-600 text-center font-semibold">Low-fidelity schets 2</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
+          <img 
+            src="Foto/Week_2/schets3.png" 
+            alt="Low-fidelity schets 3" 
+            class="w-full rounded border-2 border-[#41987b] mb-3"
+          />
+          <p class="text-sm text-gray-600 text-center font-semibold">Low-fidelity schets 3</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
+          <img 
+            src="Foto/Week_2/midi_fidelity.png" 
+            alt="Midi-fidelity prototype" 
+            class="w-full rounded border-2 border-[#41987b] mb-3"
+          />
+          <p class="text-sm text-gray-600 text-center font-semibold">Midi-fidelity prototype in Figma</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="flex justify-between items-center pt-8 border-t-2 border-[#41987b] animate-fadeInUp" style="animation-delay: 0.6s;">
+      <a href="./z2Week1.html" class="px-6 py-3 bg-white border-2 border-[#41987b] text-[#41987b] rounded-lg font-semibold transition-all duration-300 hover:bg-[#41987b] hover:text-white hover:scale-105 hover:shadow-lg flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        Vorige Week
+      </a>
+      <a href="./z4Week3.html" class="px-6 py-3 bg-white border-2 border-[#41987b] text-[#41987b] rounded-lg font-semibold transition-all duration-300 hover:bg-[#41987b] hover:text-white hover:scale-105 hover:shadow-lg flex items-center gap-2">
+        Volgende Week
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    </nav>
+
   </main>
 
-  <!-- FOOTER -->
-  <footer style="background-color: #5169D8; border-top: 1px solid #5169D8;" class="py-8 mt-12">
+  <footer class="bg-[#f7f7f7] border-t border-[#41987b] py-8 mt-12 animate-fadeInUp">
     <div class="max-w-5xl mx-auto px-6">
-      <p cclass="bg-[#f7f7f7] border-t border-gray-200 py-8 mt-12">
-    <div class="max-w-5xl mx-auto px-6">
-      <p class="text-sm text-gray-600">© 2025 Joren Lenaerts</p>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <p class="text-sm">© 2025 Joren Lenaerts, 1GMD2</p>
+        
+        
+          
+          <a 
+            href="https://github.com/Jorenlenaerts-del/Projectdocs" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="px-6 py-2 bg-white border-2 border-[#41987b] text-[#41987b] rounded-lg font-semibold text-sm transition-all duration-300 hover:bg-[#41987b] hover:text-white hover:scale-105 hover:shadow-lg flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+            Bezoek mijn github
+          </a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <script>
-    const dropdownBtn = document.getElementById('dropdownBtn');
-    const dropdownMenu = document.getElementById('dropdownMenu');
+  <div id="dropdownModal" class="fixed inset-0 bg-black/80 hidden z-[9999] animate-fadeIn">
+    <div class="h-full overflow-y-auto py-8">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="flex justify-end mb-6">
+          <button id="closeDropdownModal" class="text-white text-5xl font-bold hover:text-[#41987b] transition leading-none">&times;</button>
+        </div>
+        
+        <div class="space-y-3 pb-20">
+          <div class="p-4 bg-white rounded-lg shadow-xl transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-white hover:to-[#f0faf7]">
+            <a href="./z2Week1.html" class="inline-block text-black bg-white border-2 border-[#41987b] font-semibold hover:text-white hover:bg-[#41987b] transition-all duration-300 px-4 py-2 rounded text-base mb-2">Week 1</a>
+            <p class="text-sm text-gray-700">Introductie van het concept met focus op het centraliseren en vereenvoudigen van essentiële reisinformatie.</p>
+          </div>
+          
+          <div class="p-4 bg-white rounded-lg shadow-xl transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-white hover:to-[#f0faf7]">
+            <a href="./z3Week2.html" class="inline-block text-white bg-[#41987b] border-2 border-[#41987b] font-semibold px-4 py-2 rounded text-base mb-2">Week 2 (Huidige)</a>
+            <p class="text-sm text-gray-700">Uitwerking van low-fidelity schetsen en wireframes, gevolgd door de eerste midi-fidelity prototypes in Figma.</p>
+          </div>
+          
+          <div class="p-4 bg-white rounded-lg shadow-xl transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-white hover:to-[#f0faf7]">
+            <a href="./z4Week3.html" class="inline-block text-black bg-white border-2 border-[#41987b] font-semibold hover:text-white hover:bg-[#41987b] transition-all duration-300 px-4 py-2 rounded text-base mb-2">Week 3</a>
+            <p class="text-sm text-gray-700">Ontwikkeling van midi- en high-fidelity prototypes in Figma met visuele hiërarchie.</p>
+          </div>
 
-    dropdownBtn.addEventListener('click', () => {
-      dropdownMenu.classList.toggle('hidden');
-    });& !dropdownMenu.contains(e.target)) {
-        dropdownMenu.classList.add('hidden');
+          <div class="p-4 bg-white rounded-lg shadow-xl transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-white hover:to-[#f0faf7]">
+            <a href="./z5Week4.html" class="inline-block text-black bg-white border-2 border-[#41987b] font-semibold hover:text-white hover:bg-[#41987b] transition-all duration-300 px-4 py-2 rounded text-base mb-2">Week 4</a>
+            <p class="text-sm text-gray-700">HTML en CSS basics met focus op tabellen en kolomstructuren.</p>
+          </div>
+
+          <div class="p-4 bg-white rounded-lg shadow-xl transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-white hover:to-[#f0faf7]">
+            <a href="./z6Week5.html" class="inline-block text-black bg-white border-2 border-[#41987b] font-semibold hover:text-white hover:bg-[#41987b] transition-all duration-300 px-4 py-2 rounded text-base mb-2">Week 5</a>
+            <p class="text-sm text-gray-700">Fontstudie met contrastkleuren voor leesbare typografie.</p>
+          </div>
+
+          <div class="p-4 bg-white rounded-lg shadow-xl transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-white hover:to-[#f0faf7]">
+            <a href="./z7Week6.html" class="inline-block text-black bg-white border-2 border-[#41987b] font-semibold hover:text-white hover:bg-[#41987b] transition-all duration-300 px-4 py-2 rounded text-base mb-2">Week 6</a>
+            <p class="text-sm text-gray-700">Experimenten met HTML en CSS, vertaling van Figma naar code.</p>
+          </div>
+
+          <div class="p-4 bg-white rounded-lg shadow-xl transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-white hover:to-[#f0faf7]">
+            <a href="./z8Week7.html" class="inline-block text-black bg-white border-2 border-[#41987b] font-semibold hover:text-white hover:bg-[#41987b] transition-all duration-300 px-4 py-2 rounded text-base mb-2">Week 7</a>
+            <p class="text-sm text-gray-700">Documentatie en optimalisatie van perron- en overzichtsschermen.</p>
+          </div>
+
+          <div class="p-4 bg-white rounded-lg shadow-xl transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-white hover:to-[#f0faf7]">
+            <a href="./z9Week8en9.html" class="inline-block text-black bg-white border-2 border-[#41987b] font-semibold hover:text-white hover:bg-[#41987b] transition-all duration-300 px-4 py-2 rounded text-base mb-2">Week 8 en 9</a>
+            <p class="text-sm text-gray-700">Ontwerp en uitwerking van interactieve schermen met nieuw kleurenpalet.</p>
+          </div>
+
+          <div class="p-4 bg-white rounded-lg shadow-xl transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-white hover:to-[#f0faf7]">
+            <a href="./z10Week10.html" class="inline-block text-black bg-white border-2 border-[#41987b] font-semibold hover:text-white hover:bg-[#41987b] transition-all duration-300 px-4 py-2 rounded text-base mb-2">Week 10</a>
+            <p class="text-sm text-gray-700">Volwaardig interactief ontwerp met verfijnde flow en animaties.</p>
+          </div>
+
+          <div class="p-4 bg-white rounded-lg shadow-xl transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-white hover:to-[#f0faf7]">
+            <a href="./z11Week11.html" class="inline-block text-black bg-white border-2 border-[#41987b] font-semibold hover:text-white hover:bg-[#41987b] transition-all duration-300 px-4 py-2 rounded text-base mb-2">Week 11</a>
+            <p class="text-sm text-gray-700">Feedback verwerking rond kleurcontrast en typografische hiërarchie.</p>
+          </div>
+
+          <div class="p-4 bg-white rounded-lg shadow-xl transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-white hover:to-[#f0faf7]">
+            <a href="./z12week12.html" class="inline-block text-black bg-white border-2 border-[#41987b] font-semibold hover:text-white hover:bg-[#41987b] transition-all duration-300 px-4 py-2 rounded text-base mb-2">Week 12 tot einde</a>
+            <p class="text-sm text-gray-700">Afronding met nieuwe navigatie, favorietenpagina en interactieve UI-elementen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+      document.body.style.setProperty('--mouse-x', `${x}%`);
+      document.body.style.setProperty('--mouse-y', `${y}%`);
+    });
+
+    const dropdownBtn = document.getElementById('dropdownBtn');
+    const dropdownModal = document.getElementById('dropdownModal');
+    const closeDropdownModal = document.getElementById('closeDropdownModal');
+    const dropdownIcon = document.getElementById('dropdownIcon');
+
+    function openDropdownModal() {
+      dropdownModal.classList.remove('hidden');
+      document.body.classList.add('modal-open');
+      dropdownIcon.style.transform = 'rotate(180deg)';
+    }
+
+    function closeDropdownModalFunc() {
+      dropdownModal.classList.add('hidden');
+      document.body.classList.remove('modal-open');
+      dropdownIcon.style.transform = 'rotate(0deg)';
+    }
+
+    dropdownBtn.addEventListener('click', openDropdownModal);
+    closeDropdownModal.addEventListener('click', closeDropdownModalFunc);
+    
+    dropdownModal.addEventListener('click', (e) => {
+      if (e.target === dropdownModal) {
+        closeDropdownModalFunc();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDropdownModalFunc();
       }
     });
   </script>

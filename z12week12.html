@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Week 6 - Progressfile Joren Lenaerts</title>
+  <title>Week 12 tot Einde - Progressfile Joren Lenaerts</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
@@ -102,111 +102,136 @@
   <main class="max-w-5xl mx-auto px-6 py-10">
 
     <div class="mb-12 animate-fadeInUp">
-      <h1 class="text-5xl font-bold mb-3">Week 6</h1>
+      <h1 class="text-5xl font-bold mb-3">Week 12 tot Einde</h1>
     </div>
 
     <section class="mb-12 animate-fadeInUp" style="animation-delay: 0.2s;">
-      <h2 class="text-3xl font-bold mb-6">Experimenten met HTML en CSS</h2>
+      <h2 class="text-3xl font-bold mb-6">Afronding van het Project</h2>
       <p class="leading-relaxed text-lg mb-4 text-gray-900">
-        Tijdens week zes heb ik mijn <strong>Figma-ontwerp omgezet naar HTML en CSS</strong>. In het begin verliep het moeizaam, want via AI-ondersteuning genereerde ik verschillende ontwerpen met weinig consistentie. Daarom ging ik anders te werk en heb me gefocust op het eindontwerp van de tabellen, evenals de lay-out en uiterlijk van mijn treinschermen.
+        In deze laatste weken heb ik de <strong>laatste aanpassingen</strong> gedaan: nieuwe navigatie, het maken van een favorietenpagina, uitlijning en het maken van een flow. Deze finale fase heeft het ontwerp afgerond en compleet gemaakt.
       </p>
-      <p class="leading-relaxed text-lg mb-4 text-gray-900">
-        Dit zorgde voor een nettere tweede variant met behulp van ChatGPT, die zeker representatief waren ten opzichte van mijn highfidelity ontwerpen in Figma.
+      <p class="leading-relaxed text-lg mb-6 text-gray-900">
+        De navigatie binnen een app is cruciaal voor eenvoudig en snel gebruik. Hierdoor heb ik alle knoppen apart genomen, nieuwe iconen geïmplementeerd om eenvoudige handelingen te doen met de app.
       </p>
     </section>
 
     <section class="mb-12 animate-fadeInUp" style="animation-delay: 0.4s;">
-      <h3 class="text-2xl font-bold mb-6">Van Figma naar Code</h3>
-      <p class="leading-relaxed text-lg mb-4 text-gray-900">
-        Het moeilijkste was het aanpassen van kleine elementen binnen de code om het ontwerp te optimaliseren. Achteraf heb ik het grootste deel ongewijzigd gelaten, zonder verdere aanpassingen te doen wegens beperkte voorkennis over VSC en coderen.
-      </p>
+      <h3 class="text-2xl font-bold mb-6">Nieuwe Navigatie</h3>
       <p class="leading-relaxed text-lg mb-6 text-gray-900">
-        Hieronder zie je het proces van Figma-ontwerp naar de uiteindelijke HTML en CSS implementatie. De verschillende stappen tonen hoe het ontwerp is vertaald naar werkende code.
+        De vorige header heeft me niet kunnen overtuigen qua uitstraling. Daarom heb ik besloten deze te herontwerpen. Bijvoorbeeld het tonen van een treinticket is nu direct toegankelijk via de navigatie.
       </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
+          <img 
+            src="Foto/Week_12/navigatie_v1.png" 
+            alt="Navigatie V1" 
+            class="w-full rounded border-2 border-[#41987b] mb-3"
+          />
+          <p class="text-sm text-gray-600 text-center font-semibold">Versie 1 (oude navigatie)</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
+          <img 
+            src="Foto/Week_12/navigatie_v2.png" 
+            alt="Navigatie V2" 
+            class="w-full rounded border-2 border-[#41987b] mb-3"
+          />
+          <p class="text-sm text-gray-600 text-center font-semibold">Versie 2 (nieuwe navigatie)</p>
+        </div>
+      </div>
     </section>
 
     <section class="mb-12 animate-fadeInUp" style="animation-delay: 0.6s;">
-      <h3 class="text-2xl font-bold mb-6">Figma Ontwerpen</h3>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
-          <img 
-            src="Foto/Week_6/figma_1.png" 
-            alt="Figma ontwerp - Perronscherm" 
-            class="w-full rounded border-2 border-[#41987b] mb-3"
-          />
-          <p class="text-sm text-gray-600 text-center font-semibold">Figma - Perronscherm</p>
-        </div>
+      <h3 class="text-2xl font-bold mb-6">Favorietenpagina</h3>
+      <p class="leading-relaxed text-lg mb-4 text-gray-900">
+        Verder stond in de briefing dat de gebruiker de mogelijkheid moest hebben om <strong>trajecten op te slaan</strong>. Hiervoor heb ik, zoals in veel andere apps, een favorietenpagina gemaakt. Door een simpele klik op het stericoontje kan elke route gemakkelijk worden opgeslagen of als favoriet worden aangeduid.
+      </p>
+      <p class="leading-relaxed text-lg mb-6 text-gray-900">
+        Dit bevordert het gebruik voor frequente reizigers en maakt trajecten eenvoudiger terug te vinden. Deze pagina is gebaseerd op het algemene treinscherm. Door elementen en de stijl van het algemene treinscherm te behouden, blijft de lay-out en uitstraling consistent. Hierdoor raakt de gebruiker sneller vertrouwd met de app.
+      </p>
 
-        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
+      <div class="flex justify-center mb-8">
+        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer max-w-md w-full">
           <img 
-            src="Foto/Week_6/figma_2.png" 
-            alt="Figma ontwerp - Overzichtsscherm" 
+            src="Foto/Week_12/favorieten.png" 
+            alt="Favorietenpagina" 
             class="w-full rounded border-2 border-[#41987b] mb-3"
           />
-          <p class="text-sm text-gray-600 text-center font-semibold">Figma - Overzichtsscherm</p>
-        </div>
-
-        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
-          <img 
-            src="Foto/Week_6/figma_3.png" 
-            alt="Figma ontwerp - Passagiersscherm" 
-            class="w-full rounded border-2 border-[#41987b] mb-3"
-          />
-          <p class="text-sm text-gray-600 text-center font-semibold">Figma - Passagiersscherm</p>
+          <p class="text-sm text-gray-600 text-center font-semibold">Favorietenpagina</p>
         </div>
       </div>
 
-      <h3 class="text-2xl font-bold mb-6">HTML & CSS Implementatie</h3>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
-          <img 
-            src="Foto/Week_6/html_css_1.png" 
-            alt="HTML/CSS - Perronscherm" 
-            class="w-full rounded border-2 border-[#41987b] mb-3"
-          />
-          <p class="text-sm text-gray-600 text-center font-semibold">HTML/CSS - Perronscherm</p>
-        </div>
-
-        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
-          <img 
-            src="Foto/Week_6/html_css_2.png" 
-            alt="HTML/CSS - Overzichtsscherm" 
-            class="w-full rounded border-2 border-[#41987b] mb-3"
-          />
-          <p class="text-sm text-gray-600 text-center font-semibold">HTML/CSS - Overzichtsscherm</p>
-        </div>
-
-        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
-          <img 
-            src="Foto/Week_6/html_css_3.png" 
-            alt="HTML/CSS - Passagiersscherm" 
-            class="w-full rounded border-2 border-[#41987b] mb-3"
-          />
-          <p class="text-sm text-gray-600 text-center font-semibold">HTML/CSS - Passagiersscherm</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="mb-12 animate-fadeInUp" style="animation-delay: 0.8s;">
-      <h3 class="text-2xl font-bold mb-6">Conclusie</h3>
       <p class="leading-relaxed text-lg text-gray-900">
-        De vertaling van Figma naar HTML en CSS was een leerzaam proces. Hoewel er nog ruimte is voor verbetering in de code-optimalisatie, vormden de resultaten een solide basis voor verdere ontwikkeling. De ervaring met AI-tools zoals ChatGPT hielp bij het genereren van code, maar vereiste wel een kritische blik om consistentie te waarborgen.
+        Daarnaast is er een aankopenknop in de navigatie toegevoegd. Via deze knop kan de gebruiker rechtstreeks tickets en andere ticketgerelateerde informatie vinden. Ook is er een link naar het actieve ticket opgenomen, voor het geval iemand per ongeluk de verkeerde knop gebruikt.
       </p>
     </section>
 
-    <nav class="flex justify-between items-center pt-8 border-t-2 border-[#41987b] animate-fadeInUp" style="animation-delay: 1s;">
-      <a href="./z6Week5.html" class="px-6 py-3 bg-white border-2 border-[#41987b] text-[#41987b] rounded-lg font-semibold transition-all duration-300 hover:bg-[#41987b] hover:text-white hover:scale-105 hover:shadow-lg flex items-center gap-2">
+    <section class="mb-12 animate-fadeInUp" style="animation-delay: 0.8s;">
+      <h3 class="text-2xl font-bold mb-6">Uitlijning en Flow</h3>
+      <p class="leading-relaxed text-lg mb-6 text-gray-900">
+        Nadat de laatste pagina toegevoegd was en alles klaar was heb ik de <strong>uitlijning van alle elementen</strong> nagekeken. Sommige elementen waren een paar pixels verschoven, wat veroorzaakt werd door het toegevoegd effect op bepaalde elementen (schaduw). Hierdoor heb ik de uitlijning moeten aanpassen, zodat alles mooi overeen komt met de rest van het ontwerp.
+      </p>
+
+      <div class="flex justify-center mb-8">
+        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer max-w-md w-full">
+          <img 
+            src="Foto/Week_12/uitlijning.png" 
+            alt="Uitlijning voorbeeld" 
+            class="w-full rounded border-2 border-[#41987b] mb-3"
+          />
+          <p class="text-sm text-gray-600 text-center font-semibold">Uitlijning verbeteringen</p>
+        </div>
+      </div>
+
+      <p class="leading-relaxed text-lg mb-6 text-gray-900">
+        Als laatste heb ik de <strong>flow van het ontwerp</strong> bepaald. Tijdens dit proces kwam ik tot de conclusie dat veel frames overbodig waren, voornamelijk van de beginpagina's van het station overzicht. Deze zijn verwijderd, maar blijven via de link bereikbaar. Dit verminderd het aantal knoppen en zorgt voor een beter overzicht binnen de interface.
+      </p>
+    </section>
+
+    <section class="mb-12 animate-fadeInUp" style="animation-delay: 1s;">
+      <h3 class="text-2xl font-bold mb-6">Interactieve UI-elementen</h3>
+      <p class="leading-relaxed text-lg mb-6 text-gray-900">
+        Als interactief UI-element heb ik de knoppen en de eerste treinkeuze laten reageren op interactie. Dit creëert een <strong>directe verbinding tussen de interface en de gebruiker</strong>. Bovendien geeft het onmiddellijk een visuele bevestiging wanneer iets geselecteerd wordt, wat vaak belangrijk is. Visuele of auditieve ondersteuning bevestigt hierbij doorgaans de handeling.
+      </p>
+
+      <div class="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 mb-8">
+        <img 
+          src="Foto/Week_12/flow_compleet_1.png" 
+          alt="Volledig flow overzicht deel 1" 
+          class="w-full rounded border-2 border-[#41987b] mb-4"
+        />
+        <p class="text-sm text-gray-600 text-center font-semibold">Volledig overzicht van alle interactieve flows (deel 1)</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 mb-8">
+        <img 
+          src="Foto/Week_12/flow_compleet_2.png" 
+          alt="Volledig flow overzicht deel 2" 
+          class="w-full rounded border-2 border-[#41987b] mb-4"
+        />
+        <p class="text-sm text-gray-600 text-center font-semibold">Volledig overzicht van alle interactieve flows (deel 2)</p>
+      </div>
+    </section>
+
+    <section class="mb-12 animate-fadeInUp" style="animation-delay: 1.2s;">
+      <h3 class="text-2xl font-bold mb-6">Conclusie</h3>
+      <p class="leading-relaxed text-lg text-gray-900">
+        Het project is succesvol afgerond met een volledige, intuïtieve en visueel coherente mobiele applicatie. Door de laatste weken te focussen op navigatie, favorietenfunctionaliteit, uitlijning en interactieve elementen, is het ontwerp geëvolueerd tot een gebruiksvriendelijke oplossing die de complexiteit van reisinformatie reduceert. De consistente stijl, duidelijke hiërarchie en thoughtful interactions maken de app geschikt voor dagelijks gebruik door frequente en incidentele reizigers.
+      </p>
+    </section>
+
+    <nav class="flex justify-between items-center pt-8 border-t-2 border-[#41987b] animate-fadeInUp" style="animation-delay: 1.4s;">
+      <a href="./z11Week11.html" class="px-6 py-3 bg-white border-2 border-[#41987b] text-[#41987b] rounded-lg font-semibold transition-all duration-300 hover:bg-[#41987b] hover:text-white hover:scale-105 hover:shadow-lg flex items-center gap-2">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
         </svg>
         Vorige Week
       </a>
-      <a href="./z8Week7.html" class="px-6 py-3 bg-white border-2 border-[#41987b] text-[#41987b] rounded-lg font-semibold transition-all duration-300 hover:bg-[#41987b] hover:text-white hover:scale-105 hover:shadow-lg flex items-center gap-2">
-        Volgende Week
+      <a href="index.html" class="px-6 py-3 bg-white border-2 border-[#41987b] text-[#41987b] rounded-lg font-semibold transition-all duration-300 hover:bg-[#41987b] hover:text-white hover:scale-105 hover:shadow-lg flex items-center gap-2">
+        Terug naar Home
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
         </svg>
       </a>
     </nav>
@@ -269,7 +294,7 @@
           </div>
 
           <div class="p-4 bg-white rounded-lg shadow-xl transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-white hover:to-[#f0faf7]">
-            <a href="./z7Week6.html" class="inline-block text-white bg-[#41987b] border-2 border-[#41987b] font-semibold px-4 py-2 rounded text-base mb-2">Week 6 (Huidige)</a>
+            <a href="./z7Week6.html" class="inline-block text-black bg-white border-2 border-[#41987b] font-semibold hover:text-white hover:bg-[#41987b] transition-all duration-300 px-4 py-2 rounded text-base mb-2">Week 6</a>
             <p class="text-sm text-gray-700">Experimenten met HTML en CSS, vertaling van Figma naar code.</p>
           </div>
 
@@ -294,7 +319,7 @@
           </div>
 
           <div class="p-4 bg-white rounded-lg shadow-xl transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-white hover:to-[#f0faf7]">
-            <a href="./z12week12.html" class="inline-block text-black bg-white border-2 border-[#41987b] font-semibold hover:text-white hover:bg-[#41987b] transition-all duration-300 px-4 py-2 rounded text-base mb-2">Week 12 tot einde</a>
+            <a href="./z12week12.html" class="inline-block text-white bg-[#41987b] border-2 border-[#41987b] font-semibold px-4 py-2 rounded text-base mb-2">Week 12 tot einde (Huidige)</a>
             <p class="text-sm text-gray-700">Afronding met nieuwe navigatie, favorietenpagina en interactieve UI-elementen.</p>
           </div>
         </div>

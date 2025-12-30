@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Week 6 - Progressfile Joren Lenaerts</title>
+  <title>Week 11 - Progressfile Joren Lenaerts</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
@@ -102,108 +102,187 @@
   <main class="max-w-5xl mx-auto px-6 py-10">
 
     <div class="mb-12 animate-fadeInUp">
-      <h1 class="text-5xl font-bold mb-3">Week 6</h1>
+      <h1 class="text-5xl font-bold mb-3">Week 11</h1>
     </div>
 
     <section class="mb-12 animate-fadeInUp" style="animation-delay: 0.2s;">
-      <h2 class="text-3xl font-bold mb-6">Experimenten met HTML en CSS</h2>
+      <h2 class="text-3xl font-bold mb-6">Feedback op Translatie</h2>
       <p class="leading-relaxed text-lg mb-4 text-gray-900">
-        Tijdens week zes heb ik mijn <strong>Figma-ontwerp omgezet naar HTML en CSS</strong>. In het begin verliep het moeizaam, want via AI-ondersteuning genereerde ik verschillende ontwerpen met weinig consistentie. Daarom ging ik anders te werk en heb me gefocust op het eindontwerp van de tabellen, evenals de lay-out en uiterlijk van mijn treinschermen.
+        Tijdens het contactmoment heb ik mijn ontwerp laten beoordelen. De <strong>flow zat goed</strong> en werd als interessant ervaren. Het grootste deel van de interface was intuïtief en oogde verzorgd. Enkele werkpunten waren de <strong>kleurkeuze en de hiërarchie</strong> tussen de verschillende lettergroottes.
       </p>
-      <p class="leading-relaxed text-lg mb-4 text-gray-900">
-        Dit zorgde voor een nettere tweede variant met behulp van ChatGPT, die zeker representatief waren ten opzichte van mijn highfidelity ontwerpen in Figma.
+      <p class="leading-relaxed text-lg mb-6 text-gray-900">
+        Via Coolors heb ik het kleurcontrast onderzocht en de bijhorende scores genoteerd. Op basis van deze scores en de feedback van personen die de app hebben getest, heb ik een beslissing genomen.
       </p>
     </section>
 
     <section class="mb-12 animate-fadeInUp" style="animation-delay: 0.4s;">
-      <h3 class="text-2xl font-bold mb-6">Van Figma naar Code</h3>
+      <h3 class="text-2xl font-bold mb-6">Kleurcontrast Analyse</h3>
       <p class="leading-relaxed text-lg mb-4 text-gray-900">
-        Het moeilijkste was het aanpassen van kleine elementen binnen de code om het ontwerp te optimaliseren. Achteraf heb ik het grootste deel ongewijzigd gelaten, zonder verdere aanpassingen te doen wegens beperkte voorkennis over VSC en coderen.
+        Eerst heb ik gekeken welke contrastscore de bestaande kleurcombinatie behaalde. Deze score bleek echter zeer laag: <strong>1,91 op 21</strong> voor leesbaarheid. Zowel deze score als de bijkomende ordinale score voor lettergrootte waren onvoldoende. Op basis van deze bevindingen ben ik opnieuw op zoek gegaan naar alternatieven.
       </p>
       <p class="leading-relaxed text-lg mb-6 text-gray-900">
-        Hieronder zie je het proces van Figma-ontwerp naar de uiteindelijke HTML en CSS implementatie. De verschillende stappen tonen hoe het ontwerp is vertaald naar werkende code.
+        Ik wilde daarbij binnen hetzelfde kleurgenre blijven, maar de verschillende groentinten verstoorden de bestaande combinatie van donkerblauw <strong>(#072AC8)</strong> en lichtblauw <strong>(#5169D8)</strong>, die ik al sinds les 3 hanteer. Hieronder zijn verschillende kleurexperimenten te zien die ik heb toegepast op het kolomscherm van de app.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div class="bg-white p-3 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
+          <img 
+            src="Foto/Week_11/kleur_origineel.png" 
+            alt="Originele kleur - 1.91" 
+            class="w-full rounded border-2 border-[#41987b] mb-2"
+          />
+          <p class="text-xs text-gray-600 text-center font-semibold">1.91 (origineel)</p>
+        </div>
+
+        <div class="bg-white p-3 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
+          <img 
+            src="Foto/Week_11/kleur_variant1.png" 
+            alt="Variant 1 - 4.81" 
+            class="w-full rounded border-2 border-[#41987b] mb-2"
+          />
+          <p class="text-xs text-gray-600 text-center font-semibold">4.81</p>
+        </div>
+
+        <div class="bg-white p-3 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
+          <img 
+            src="Foto/Week_11/kleur_variant2.png" 
+            alt="Variant 2 - 3.09" 
+            class="w-full rounded border-2 border-[#41987b] mb-2"
+          />
+          <p class="text-xs text-gray-600 text-center font-semibold">3.09</p>
+        </div>
+
+        <div class="bg-white p-3 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
+          <img 
+            src="Foto/Week_11/kleur_variant3.png" 
+            alt="Variant 3 - 3.50" 
+            class="w-full rounded border-2 border-[#41987b] mb-2"
+          />
+          <p class="text-xs text-gray-600 text-center font-semibold">3.50</p>
+        </div>
+
+        <div class="bg-white p-3 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
+          <img 
+            src="Foto/Week_11/kleur_variant4.png" 
+            alt="Variant 4 - 10.91" 
+            class="w-full rounded border-2 border-[#41987b] mb-2"
+          />
+          <p class="text-xs text-gray-600 text-center font-semibold">10.91</p>
+        </div>
+
+        <div class="bg-white p-3 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
+          <img 
+            src="Foto/Week_11/kleur_variant5.png" 
+            alt="Variant 5" 
+            class="w-full rounded border-2 border-[#41987b] mb-2"
+          />
+          <p class="text-xs text-gray-600 text-center font-semibold">Variant 5</p>
+        </div>
+
+        <div class="bg-white p-3 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
+          <img 
+            src="Foto/Week_11/kleur_variant6.png" 
+            alt="Variant 6 - 5.44" 
+            class="w-full rounded border-2 border-[#41987b] mb-2"
+          />
+          <p class="text-xs text-gray-600 text-center font-semibold">5.44</p>
+        </div>
+
+        <div class="bg-white p-3 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
+          <img 
+            src="Foto/Week_11/kleur_variant7.png" 
+            alt="Variant 7 - 3.50" 
+            class="w-full rounded border-2 border-[#41987b] mb-2"
+          />
+          <p class="text-xs text-gray-600 text-center font-semibold">3.50</p>
+        </div>
+      </div>
+
+      <p class="leading-relaxed text-lg mb-6 text-gray-900">
+        Achteraf ben ik bij de standaard kleuren gebleven. De enige verandering is de achtergrondkleur, die niet langer groen is, maar <strong>lichtblauw (#5169D8)</strong>. Hierdoor blijft het groen behouden als steunkleur, maar op cruciale punten waar de tekst niet groter of bold kan worden weergegeven wordt lichtblauw gebruikt.
       </p>
     </section>
 
     <section class="mb-12 animate-fadeInUp" style="animation-delay: 0.6s;">
-      <h3 class="text-2xl font-bold mb-6">Figma Ontwerpen</h3>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <h3 class="text-2xl font-bold mb-6">Typografische Hiërarchie</h3>
+      <p class="leading-relaxed text-lg mb-4 text-gray-900">
+        Wat betreft hiërarchie heb ik onderzocht of de tabellen groter moesten worden, zodat er meer ruimte ontstaat tussen de verschillende informatie-elementen. Hierdoor is het eenvoudiger om onderscheid te maken door de gebruiker tijdens het lezen.
+      </p>
+      <p class="leading-relaxed text-lg mb-6 text-gray-900">
+        Het kleinste lettertype dat ik hierbij gebruik is <strong>14pt</strong>. Van daaruit schaal ik naar grotere lettertypes aan de hand van de <strong>gulden ratio</strong>. Deze gulden ratio is <strong>(× of ÷ 1.6)</strong>. Hierdoor hebben we een body tekst van 14, een sub-kop van 22 tot 23 en een hoofdkop van 36. De hoofdkop van 36 is voor ons niet van toepassing omdat dit teveel ruimte zou innemen. Hierdoor kies ik voor een fontgrootte van <strong>30pt</strong>.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
           <img 
-            src="Foto/Week_6/figma_1.png" 
-            alt="Figma ontwerp - Perronscherm" 
+            src="Foto/Week_11/hierarchie_v1.png" 
+            alt="Versie 1 - Voor aanpassing" 
             class="w-full rounded border-2 border-[#41987b] mb-3"
           />
-          <p class="text-sm text-gray-600 text-center font-semibold">Figma - Perronscherm</p>
+          <p class="text-sm text-gray-600 text-center font-semibold">Versie 1 (voor aanpassing)</p>
         </div>
 
         <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
           <img 
-            src="Foto/Week_6/figma_2.png" 
-            alt="Figma ontwerp - Overzichtsscherm" 
+            src="Foto/Week_11/hierarchie_v2.png" 
+            alt="Versie 2 - Na aanpassing" 
             class="w-full rounded border-2 border-[#41987b] mb-3"
           />
-          <p class="text-sm text-gray-600 text-center font-semibold">Figma - Overzichtsscherm</p>
-        </div>
-
-        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
-          <img 
-            src="Foto/Week_6/figma_3.png" 
-            alt="Figma ontwerp - Passagiersscherm" 
-            class="w-full rounded border-2 border-[#41987b] mb-3"
-          />
-          <p class="text-sm text-gray-600 text-center font-semibold">Figma - Passagiersscherm</p>
+          <p class="text-sm text-gray-600 text-center font-semibold">Versie 2 (na aanpassing)</p>
         </div>
       </div>
 
-      <h3 class="text-2xl font-bold mb-6">HTML & CSS Implementatie</h3>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
-          <img 
-            src="Foto/Week_6/html_css_1.png" 
-            alt="HTML/CSS - Perronscherm" 
-            class="w-full rounded border-2 border-[#41987b] mb-3"
-          />
-          <p class="text-sm text-gray-600 text-center font-semibold">HTML/CSS - Perronscherm</p>
-        </div>
-
-        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
-          <img 
-            src="Foto/Week_6/html_css_2.png" 
-            alt="HTML/CSS - Overzichtsscherm" 
-            class="w-full rounded border-2 border-[#41987b] mb-3"
-          />
-          <p class="text-sm text-gray-600 text-center font-semibold">HTML/CSS - Overzichtsscherm</p>
-        </div>
-
-        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
-          <img 
-            src="Foto/Week_6/html_css_3.png" 
-            alt="HTML/CSS - Passagiersscherm" 
-            class="w-full rounded border-2 border-[#41987b] mb-3"
-          />
-          <p class="text-sm text-gray-600 text-center font-semibold">HTML/CSS - Passagiersscherm</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="mb-12 animate-fadeInUp" style="animation-delay: 0.8s;">
-      <h3 class="text-2xl font-bold mb-6">Conclusie</h3>
       <p class="leading-relaxed text-lg text-gray-900">
-        De vertaling van Figma naar HTML en CSS was een leerzaam proces. Hoewel er nog ruimte is voor verbetering in de code-optimalisatie, vormden de resultaten een solide basis voor verdere ontwikkeling. De ervaring met AI-tools zoals ChatGPT hielp bij het genereren van code, maar vereiste wel een kritische blik om consistentie te waarborgen.
+        De tabellen konden achteraf gezien groter worden weergegeven; hierboven is een voorbeeld van vóór en na te zien. Dit zorgt voor een duidelijke hiërarchie tussen de informatie dankzij de extra spacing. Het enige nadeel is dat de hoeveelheid ritten hierdoor meer ruimte inneemt, maar aangezien scrollen op een gsm intuïtief werkt in combinatie met een kolomstructuur, is dit geen probleem.
       </p>
     </section>
 
-    <nav class="flex justify-between items-center pt-8 border-t-2 border-[#41987b] animate-fadeInUp" style="animation-delay: 1s;">
-      <a href="./z6Week5.html" class="px-6 py-3 bg-white border-2 border-[#41987b] text-[#41987b] rounded-lg font-semibold transition-all duration-300 hover:bg-[#41987b] hover:text-white hover:scale-105 hover:shadow-lg flex items-center gap-2">
+    <section class="mb-12 animate-fadeInUp" style="animation-delay: 0.8s;">
+      <h3 class="text-2xl font-bold mb-6">Accountpagina Aanpassingen</h3>
+      <p class="leading-relaxed text-lg mb-6 text-gray-900">
+        Daarnaast zijn er aanpassingen gebeurd bij de accountpagina, hier zijn de pijlen van de instellingen of voorkeuren aangepast op basis van de feedback dat ik heb gekregen. Ook hebben we naar de instellingen van Apple gekeken. Al snel was duidelijk dat de pijlen <strong>langst rechts werden uitgelijnd</strong>. Dit heb ik dan ook toegepast en is duidelijk te zien in het voorbeeld hieronder.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
+          <img 
+            src="Foto/Week_11/account_v1.png" 
+            alt="Accountpagina V1" 
+            class="w-full rounded border-2 border-[#41987b] mb-3"
+          />
+          <p class="text-sm text-gray-600 text-center font-semibold">Versie 1 (voor aanpassing)</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
+          <img 
+            src="Foto/Week_11/account_v2.png" 
+            alt="Accountpagina V2" 
+            class="w-full rounded border-2 border-[#41987b] mb-3"
+          />
+          <p class="text-sm text-gray-600 text-center font-semibold">Versie 2 (na aanpassing)</p>
+        </div>
+      </div>
+
+      <p class="leading-relaxed text-lg text-gray-900">
+        Ook de afstanden van de subtitels ten opzichte van de bodytekst zijn aangepast. Dit zorgde voor een nieuwe en duidelijke balans tussen de titel en de rest van de subinstellingen en tekst.
+      </p>
+    </section>
+
+    <section class="mb-12 animate-fadeInUp" style="animation-delay: 1s;">
+      <h3 class="text-2xl font-bold mb-6">Conclusie</h3>
+      <p class="leading-relaxed text-lg text-gray-900">
+        De feedback heeft geleid tot belangrijke verbeteringen in de toegankelijkheid en leesbaarheid van het ontwerp. Door de kleurcontrasten te analyseren en de typografische hiërarchie aan te passen volgens de gulden ratio, is het ontwerp niet alleen visueel aantrekkelijker geworden, maar ook functioneler en gebruiksvriendelijker. De aanpassingen aan de accountpagina zorgen voor een consistentere en meer intuïtieve gebruikerservaring.
+      </p>
+    </section>
+
+    <nav class="flex justify-between items-center pt-8 border-t-2 border-[#41987b] animate-fadeInUp" style="animation-delay: 1.2s;">
+      <a href="./z10Week10.html" class="px-6 py-3 bg-white border-2 border-[#41987b] text-[#41987b] rounded-lg font-semibold transition-all duration-300 hover:bg-[#41987b] hover:text-white hover:scale-105 hover:shadow-lg flex items-center gap-2">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
         </svg>
         Vorige Week
       </a>
-      <a href="./z8Week7.html" class="px-6 py-3 bg-white border-2 border-[#41987b] text-[#41987b] rounded-lg font-semibold transition-all duration-300 hover:bg-[#41987b] hover:text-white hover:scale-105 hover:shadow-lg flex items-center gap-2">
+      <a href="z12week12" class="px-6 py-3 bg-white border-2 border-[#41987b] text-[#41987b] rounded-lg font-semibold transition-all duration-300 hover:bg-[#41987b] hover:text-white hover:scale-105 hover:shadow-lg flex items-center gap-2">
         Volgende Week
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -269,7 +348,7 @@
           </div>
 
           <div class="p-4 bg-white rounded-lg shadow-xl transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-white hover:to-[#f0faf7]">
-            <a href="./z7Week6.html" class="inline-block text-white bg-[#41987b] border-2 border-[#41987b] font-semibold px-4 py-2 rounded text-base mb-2">Week 6 (Huidige)</a>
+            <a href="./z7Week6.html" class="inline-block text-black bg-white border-2 border-[#41987b] font-semibold hover:text-white hover:bg-[#41987b] transition-all duration-300 px-4 py-2 rounded text-base mb-2">Week 6</a>
             <p class="text-sm text-gray-700">Experimenten met HTML en CSS, vertaling van Figma naar code.</p>
           </div>
 
@@ -285,16 +364,15 @@
 
           <div class="p-4 bg-white rounded-lg shadow-xl transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-white hover:to-[#f0faf7]">
             <a href="./z10Week10.html" class="inline-block text-black bg-white border-2 border-[#41987b] font-semibold hover:text-white hover:bg-[#41987b] transition-all duration-300 px-4 py-2 rounded text-base mb-2">Week 10</a>
-            <p class="text-sm text-gray-700">Volwaardig interactief ontwerp met verfijnde flow en animaties.</p>
-          </div>
+            <p class="text-sm text-gray-700">Usability testing met focus op kleurgebruik en typografische hiërarchie.</p>
 
           <div class="p-4 bg-white rounded-lg shadow-xl transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-white hover:to-[#f0faf7]">
-            <a href="./z11Week11.html" class="inline-block text-black bg-white border-2 border-[#41987b] font-semibold hover:text-white hover:bg-[#41987b] transition-all duration-300 px-4 py-2 rounded text-base mb-2">Week 11</a>
+            <a href="z11Week11.html" class="inline-block text-black bg-white border-2 border-[#41987b] font-semibold hover:text-white hover:bg-[#41987b] transition-all duration-300 px-4 py-2 rounded text-base mb-2">Week 11</a>
             <p class="text-sm text-gray-700">Feedback verwerking rond kleurcontrast en typografische hiërarchie.</p>
           </div>
 
           <div class="p-4 bg-white rounded-lg shadow-xl transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-white hover:to-[#f0faf7]">
-            <a href="./z12week12.html" class="inline-block text-black bg-white border-2 border-[#41987b] font-semibold hover:text-white hover:bg-[#41987b] transition-all duration-300 px-4 py-2 rounded text-base mb-2">Week 12 tot einde</a>
+            <a href="z12week12" class="inline-block text-black bg-white border-2 border-[#41987b] font-semibold hover:text-white hover:bg-[#41987b] transition-all duration-300 px-4 py-2 rounded text-base mb-2">Week 12 tot einde</a>
             <p class="text-sm text-gray-700">Afronding met nieuwe navigatie, favorietenpagina en interactieve UI-elementen.</p>
           </div>
         </div>
