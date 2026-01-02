@@ -131,29 +131,29 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
           <img 
-            src="Foto/Week_7/perronscherm.png" 
+            src="Public/Foto/Week_7/Perronscherm_7.png" 
             alt="Week 7 - Perronscherm" 
             class="w-full rounded border-2 border-[#41987b] mb-3"
           />
-          <p class="text-sm text-gray-600 text-center font-semibold">Perronscherm (foto 1)</p>
+          <p class="text-sm text-gray-600 text-center font-semibold">Perronscherm</p>
         </div>
 
         <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
           <img 
-            src="Foto/Week_7/overzichtsscherm.png" 
+            src="Public/Foto/Week_7/Overzichtsscherm_7.png" 
             alt="Week 7 - Overzichtsscherm" 
             class="w-full rounded border-2 border-[#41987b] mb-3"
           />
-          <p class="text-sm text-gray-600 text-center font-semibold">Overzichtsscherm (foto 2)</p>
+          <p class="text-sm text-gray-600 text-center font-semibold">Overzichtsscherm</p>
         </div>
 
         <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
           <img 
-            src="Foto/Week_7/passagiersscherm.png" 
+            src="Public/Foto/Week_7/Wagonindelingschermen_7.png" 
             alt="Week 7 - Passagiersscherm" 
             class="w-full rounded border-2 border-[#41987b] mb-3"
           />
-          <p class="text-sm text-gray-600 text-center font-semibold">Passagiersscherm (foto 3)</p>
+          <p class="text-sm text-gray-600 text-center font-semibold">Passagiersscherm</p>
         </div>
       </div>
     </section>
@@ -311,6 +311,76 @@
       }
     });
   </script>
+  <!-- Voeg dit toe aan het einde van je <body> tag, vlak voor de sluitende </body> tag -->
+<!-- Dit werkt voor ALLE weekpagina's -->
+
+<!-- Modal voor foto's -->
+<div id="photoModal" class="fixed inset-0 bg-black/90 hidden z-[10000] flex items-center justify-center p-4" style="display: none;">
+  <button id="closePhotoModal" class="absolute top-4 right-4 text-white text-5xl font-bold hover:text-[#41987b] transition leading-none z-10">&times;</button>
+  <img id="modalImage" src="" alt="" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl">
+</div>
+
+<script>
+  // Foto modal functionaliteit
+  (function() {
+    const photoModal = document.getElementById('photoModal');
+    const modalImage = document.getElementById('modalImage');
+    const closePhotoModal = document.getElementById('closePhotoModal');
+    
+    // Maak alle afbeeldingen klikbaar
+    const images = document.querySelectorAll('main img');
+    
+    images.forEach(img => {
+      img.style.cursor = 'pointer';
+      
+      img.addEventListener('click', function(e) {
+        e.stopPropagation();
+        modalImage.src = this.src;
+        modalImage.alt = this.alt;
+        photoModal.style.display = 'flex';
+        document.body.classList.add('modal-open');
+      });
+    });
+    
+    // Sluit modal functie
+    function closeModal() {
+      photoModal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+    }
+    
+    // Sluit modal bij klik op X
+    closePhotoModal.addEventListener('click', closeModal);
+    
+    // Sluit modal bij klik op achtergrond
+    photoModal.addEventListener('click', function(e) {
+      if (e.target === photoModal) {
+        closeModal();
+      }
+    });
+    
+    // Sluit modal met Escape toets
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && photoModal.style.display === 'flex') {
+        closeModal();
+      }
+    });
+  })();
+</script>
+
+<!-- 
+INSTRUCTIES:
+1. Kopieer ALLES hierboven (vanaf <!-- Modal voor foto's --> tot en met </script>)
+2. Plak dit VOOR de sluitende </body> tag in ELKE weekpagina
+3. Het werkt automatisch voor alle afbeeldingen op de pagina!
+
+Dit script:
+- Maakt alle afbeeldingen in <main> automatisch klikbaar
+- Toont ze groot in een modal overlay
+- Kan gesloten worden met:
+  * De X knop rechtsboven
+  * Klikken op de zwarte achtergrond
+  * De Escape toets op je toetsenbord
+-->
 
 </body>
 </html>

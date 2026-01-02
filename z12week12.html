@@ -124,7 +124,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
           <img 
-            src="Foto/Week_12/navigatie_v1.png" 
+            src="Public/Foto/Week_12/Nav1.png" 
             alt="Navigatie V1" 
             class="w-full rounded border-2 border-[#41987b] mb-3"
           />
@@ -133,7 +133,7 @@
 
         <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
           <img 
-            src="Foto/Week_12/navigatie_v2.png" 
+            src="Public/Foto/Week_12/Nav2.png" 
             alt="Navigatie V2" 
             class="w-full rounded border-2 border-[#41987b] mb-3"
           />
@@ -154,7 +154,7 @@
       <div class="flex justify-center mb-8">
         <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer max-w-md w-full">
           <img 
-            src="Foto/Week_12/favorieten.png" 
+            src="Public/Foto/Week_12/Fav1.png" 
             alt="Favorietenpagina" 
             class="w-full rounded border-2 border-[#41987b] mb-3"
           />
@@ -173,17 +173,6 @@
         Nadat de laatste pagina toegevoegd was en alles klaar was heb ik de <strong>uitlijning van alle elementen</strong> nagekeken. Sommige elementen waren een paar pixels verschoven, wat veroorzaakt werd door het toegevoegd effect op bepaalde elementen (schaduw). Hierdoor heb ik de uitlijning moeten aanpassen, zodat alles mooi overeen komt met de rest van het ontwerp.
       </p>
 
-      <div class="flex justify-center mb-8">
-        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer max-w-md w-full">
-          <img 
-            src="Foto/Week_12/uitlijning.png" 
-            alt="Uitlijning voorbeeld" 
-            class="w-full rounded border-2 border-[#41987b] mb-3"
-          />
-          <p class="text-sm text-gray-600 text-center font-semibold">Uitlijning verbeteringen</p>
-        </div>
-      </div>
-
       <p class="leading-relaxed text-lg mb-6 text-gray-900">
         Als laatste heb ik de <strong>flow van het ontwerp</strong> bepaald. Tijdens dit proces kwam ik tot de conclusie dat veel frames overbodig waren, voornamelijk van de beginpagina's van het station overzicht. Deze zijn verwijderd, maar blijven via de link bereikbaar. Dit verminderd het aantal knoppen en zorgt voor een beter overzicht binnen de interface.
       </p>
@@ -197,20 +186,20 @@
 
       <div class="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 mb-8">
         <img 
-          src="Foto/Week_12/flow_compleet_1.png" 
+          src="Public/Foto/Week_12/Fullapp1.png" 
           alt="Volledig flow overzicht deel 1" 
           class="w-full rounded border-2 border-[#41987b] mb-4"
         />
-        <p class="text-sm text-gray-600 text-center font-semibold">Volledig overzicht van alle interactieve flows (deel 1)</p>
+        <p class="text-sm text-gray-600 text-center font-semibold">Volledig overzicht van alle frames</p>
       </div>
 
       <div class="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 mb-8">
         <img 
-          src="Foto/Week_12/flow_compleet_2.png" 
+          src="Public/Foto/Week_12/Fullapp2.png" 
           alt="Volledig flow overzicht deel 2" 
           class="w-full rounded border-2 border-[#41987b] mb-4"
         />
-        <p class="text-sm text-gray-600 text-center font-semibold">Volledig overzicht van alle interactieve flows (deel 2)</p>
+        <p class="text-sm text-gray-600 text-center font-semibold">Volledig overzicht van alle interactieve flows</p>
       </div>
     </section>
 
@@ -367,6 +356,76 @@
       }
     });
   </script>
+  <!-- Voeg dit toe aan het einde van je <body> tag, vlak voor de sluitende </body> tag -->
+<!-- Dit werkt voor ALLE weekpagina's -->
+
+<!-- Modal voor foto's -->
+<div id="photoModal" class="fixed inset-0 bg-black/90 hidden z-[10000] flex items-center justify-center p-4" style="display: none;">
+  <button id="closePhotoModal" class="absolute top-4 right-4 text-white text-5xl font-bold hover:text-[#41987b] transition leading-none z-10">&times;</button>
+  <img id="modalImage" src="" alt="" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl">
+</div>
+
+<script>
+  // Foto modal functionaliteit
+  (function() {
+    const photoModal = document.getElementById('photoModal');
+    const modalImage = document.getElementById('modalImage');
+    const closePhotoModal = document.getElementById('closePhotoModal');
+    
+    // Maak alle afbeeldingen klikbaar
+    const images = document.querySelectorAll('main img');
+    
+    images.forEach(img => {
+      img.style.cursor = 'pointer';
+      
+      img.addEventListener('click', function(e) {
+        e.stopPropagation();
+        modalImage.src = this.src;
+        modalImage.alt = this.alt;
+        photoModal.style.display = 'flex';
+        document.body.classList.add('modal-open');
+      });
+    });
+    
+    // Sluit modal functie
+    function closeModal() {
+      photoModal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+    }
+    
+    // Sluit modal bij klik op X
+    closePhotoModal.addEventListener('click', closeModal);
+    
+    // Sluit modal bij klik op achtergrond
+    photoModal.addEventListener('click', function(e) {
+      if (e.target === photoModal) {
+        closeModal();
+      }
+    });
+    
+    // Sluit modal met Escape toets
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && photoModal.style.display === 'flex') {
+        closeModal();
+      }
+    });
+  })();
+</script>
+
+<!-- 
+INSTRUCTIES:
+1. Kopieer ALLES hierboven (vanaf <!-- Modal voor foto's --> tot en met </script>)
+2. Plak dit VOOR de sluitende </body> tag in ELKE weekpagina
+3. Het werkt automatisch voor alle afbeeldingen op de pagina!
+
+Dit script:
+- Maakt alle afbeeldingen in <main> automatisch klikbaar
+- Toont ze groot in een modal overlay
+- Kan gesloten worden met:
+  * De X knop rechtsboven
+  * Klikken op de zwarte achtergrond
+  * De Escape toets op je toetsenbord
+-->
 
 </body>
 </html>

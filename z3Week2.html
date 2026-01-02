@@ -118,41 +118,33 @@
     <section class="mb-12 animate-fadeInUp" style="animation-delay: 0.4s;">
       <h3 class="text-2xl font-bold mb-6">Meest interessante schetsen</h3>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Grid aangepast naar 3 kolommen op desktop -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
           <img 
-            src="Foto/Week_2/schets1.png" 
-            alt="Low-fidelity schets 1" 
+            src="Public/Foto/Week_1/1.jpeg" 
+            alt="Perronscherm" 
             class="w-full rounded border-2 border-[#41987b] mb-3"
           />
-          <p class="text-sm text-gray-600 text-center font-semibold">Low-fidelity schets 1</p>
+          <p class="text-sm text-gray-600 text-center font-semibold"></p>
         </div>
 
         <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
           <img 
-            src="Foto/Week_2/schets2.png" 
-            alt="Low-fidelity schets 2" 
+            src="Public/Foto/Week_1/2.jpeg" 
+            alt="Overzichtsscherm" 
             class="w-full rounded border-2 border-[#41987b] mb-3"
           />
-          <p class="text-sm text-gray-600 text-center font-semibold">Low-fidelity schets 2</p>
+          <p class="text-sm text-gray-600 text-center font-semibold"></p>
         </div>
 
         <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
           <img 
-            src="Foto/Week_2/schets3.png" 
-            alt="Low-fidelity schets 3" 
+            src="Public/Foto/Week_1/3.jpeg" 
+            alt="Wagonindelingsschermen" 
             class="w-full rounded border-2 border-[#41987b] mb-3"
           />
-          <p class="text-sm text-gray-600 text-center font-semibold">Low-fidelity schets 3</p>
-        </div>
-
-        <div class="bg-white p-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer">
-          <img 
-            src="Foto/Week_2/midi_fidelity.png" 
-            alt="Midi-fidelity prototype" 
-            class="w-full rounded border-2 border-[#41987b] mb-3"
-          />
-          <p class="text-sm text-gray-600 text-center font-semibold">Midi-fidelity prototype in Figma</p>
+          <p class="text-sm text-gray-600 text-center font-semibold"></p>
         </div>
       </div>
     </section>
@@ -179,19 +171,16 @@
       <div class="flex flex-col md:flex-row justify-between items-center gap-6">
         <p class="text-sm">© 2025 Joren Lenaerts, 1GMD2</p>
         
-        
-          
-          <a 
-            href="https://github.com/Jorenlenaerts-del/Projectdocs" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="px-6 py-2 bg-white border-2 border-[#41987b] text-[#41987b] rounded-lg font-semibold text-sm transition-all duration-300 hover:bg-[#41987b] hover:text-white hover:scale-105 hover:shadow-lg flex items-center gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-            </svg>
-            Bezoek mijn github
-          </a>
-        </div>
+        <a 
+          href="https://github.com/Jorenlenaerts-del/Projectdocs" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="px-6 py-2 bg-white border-2 border-[#41987b] text-[#41987b] rounded-lg font-semibold text-sm transition-all duration-300 hover:bg-[#41987b] hover:text-white hover:scale-105 hover:shadow-lg flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+          </svg>
+          Bezoek mijn github
+        </a>
       </div>
     </div>
   </footer>
@@ -302,6 +291,59 @@
         closeDropdownModalFunc();
       }
     });
+  </script>
+
+  <!-- Modal voor foto's -->
+  <div id="photoModal" class="fixed inset-0 bg-black/90 hidden z-[10000] flex items-center justify-center p-4" style="display: none;">
+    <button id="closePhotoModal" class="absolute top-4 right-4 text-white text-5xl font-bold hover:text-[#41987b] transition leading-none z-10">&times;</button>
+    <img id="modalImage" src="" alt="" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl">
+  </div>
+
+  <script>
+    // Foto modal functionaliteit
+    (function() {
+      const photoModal = document.getElementById('photoModal');
+      const modalImage = document.getElementById('modalImage');
+      const closePhotoModal = document.getElementById('closePhotoModal');
+      
+      // Maak alle afbeeldingen klikbaar
+      const images = document.querySelectorAll('main img');
+      
+      images.forEach(img => {
+        img.style.cursor = 'pointer';
+        
+        img.addEventListener('click', function(e) {
+          e.stopPropagation();
+          modalImage.src = this.src;
+          modalImage.alt = this.alt;
+          photoModal.style.display = 'flex';
+          document.body.classList.add('modal-open');
+        });
+      });
+      
+      // Sluit modal functie
+      function closeModal() {
+        photoModal.style.display = 'none';
+        document.body.classList.remove('modal-open');
+      }
+      
+      // Sluit modal bij klik op X
+      closePhotoModal.addEventListener('click', closeModal);
+      
+      // Sluit modal bij klik op achtergrond
+      photoModal.addEventListener('click', function(e) {
+        if (e.target === photoModal) {
+          closeModal();
+        }
+      });
+      
+      // Sluit modal met Escape toets
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && photoModal.style.display === 'flex') {
+          closeModal();
+        }
+      });
+    })();
   </script>
 
 </body>
