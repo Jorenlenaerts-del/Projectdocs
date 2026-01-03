@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PROGRESSIE_FILE_JOREN_LENAERTS</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 
   <style>
     @keyframes fadeInUp {
@@ -343,13 +344,33 @@
       }
     });
  // VOEG DEZE FUNCTIE TOE ONDERAAN:
-  function downloadPDF() {
-    const link = document.createElement('a');
-    link.href = 'Progressiefile_JorenLenaerts.pdf';
-    link.download = 'Progressiefile_JorenLenaerts.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  async function downloadPDF() {
+    const zip = new JSZip();
+    const pdfs = [
+      'LenaertsJ_InteractiveApp.pdf',
+      'LenaertsJ_Treinschermen.pdf',
+      'Progressiefile_JorenLenaerts.pdf'
+    ];
+
+    try {
+      for (const pdf of pdfs) {
+        const response = await fetch(pdf);
+        if (!response.ok) throw new Error(`Kan ${pdf} niet laden`);
+        const blob = await response.blob();
+        zip.file(pdf, blob);
+      }
+
+      const zipBlob = await zip.generateAsync({ type: 'blob' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(zipBlob);
+      link.download = 'LostinTra(i)nslation_2526_LenaertsJ.zip';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(link.href);
+    } catch (error) {
+      alert('Fout bij het downloaden van de bestanden: ' + error.message);
+    }
   }
 </script>
 
